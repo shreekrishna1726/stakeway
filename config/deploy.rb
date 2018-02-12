@@ -3,7 +3,7 @@
 
 set :repo_url,        'git@github.com:shreekrishna1726/stakeway.git'
 set :application,     'stakeway'
-set :user,            'ubuntu'
+set :user,            'stakeway'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
