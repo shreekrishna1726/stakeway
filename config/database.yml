@@ -51,4 +51,4 @@ production:
   <<: *default
   database: stakeway_production
   username: root
-  password: 8888
+
