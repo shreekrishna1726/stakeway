@@ -51,4 +51,4 @@ production:
   <<: *default
   database: stakeway_production
   username: root
-  password: <%= ENV['STAKEWAY_DATABASE_PASSWORD'] %>
+  password: 8888
