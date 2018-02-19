@@ -13,6 +13,21 @@ gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
+
+gem 'spree', '~> 3.4.4'
+gem 'spree_auth_devise', '~> 3.3'
+gem 'spree_gateway', '~> 3.3'
+
+
+gem 'stripe'
+
+gem 'ancestry'
+
+
+
+
+
+
 group :development do
     gem 'capistrano',  '3.7.2',       require: false
     gem 'capistrano-rvm',     require: false
@@ -42,6 +57,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'slim'
+gem 'slim-rails'
+gem "less-rails"
+gem "therubyracer"
 
 gem 'bootstrap-sass', '~> 3.3.7'
 
@@ -51,6 +70,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
+  gem 'rspec-rails', '~> 3.7'
 end
 
 group :development do
