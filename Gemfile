@@ -23,11 +23,6 @@ gem 'stripe'
 
 gem 'ancestry'
 
-
-
-
-
-
 group :development do
     gem 'capistrano',  '3.7.2',       require: false
     gem 'capistrano-rvm',     require: false
