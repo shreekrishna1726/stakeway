@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/spree-contrib/spree_mail_settings.git
+  revision: be7a9a9fa866054a81270f15e8e5fb289e80a9d7
+  specs:
+    spree_mail_settings (3.3.0)
+      spree_auth_devise (>= 3.1.0, < 4.0)
+      spree_backend (>= 3.1.0, < 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -473,6 +481,7 @@ DEPENDENCIES
   spree (~> 3.4.4)
   spree_auth_devise (~> 3.3)
   spree_gateway (~> 3.3)
+  spree_mail_settings!
   spring
   spring-watcher-listen (~> 2.0.0)
   stripe

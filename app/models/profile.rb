@@ -87,8 +87,16 @@ class Profile < ApplicationRecord
 		else
 			parent_profile = profile.parent
 			if parent_profile.children.count == 5
+				@depth_level = parent_profile.subtree.collect(&:ancestry_depth)
+				@last_depth_level = @depth_level.uniq.last
+				@node_count_on_depth = self.countchild(parent_profile)
+				if @last_depth_level < 6
 					parent_profile.user.update_and_create_store_credits
 					update_parent_referral_amount(parent_profile)
+				elsif @last_depth_level > 6 && (5 ** @last_depth_level < @node_count_on_depth)
+					parent_profile.user.update_and_create_store_credits
+					update_parent_referral_amount(parent_profile)
+				end
 			end
 		end
 	end
@@ -167,6 +175,19 @@ class Profile < ApplicationRecord
 
 	def to_param
 		"#{id}-#{first_name.parameterize}"
+	end
+
+
+	def countchild(node)
+		@depth_level = nil
+		p "--------------------"
+		p @depth_level
+		@size  = node.subtree.collect(&:ancestry_depth)
+
+		[@size.uniq.last].each{|x|@size.grep(x).size}.each_with_index do |x, index|
+			@depth_level = @size.grep(x).size
+		end
+		return @depth_level
 	end
 
 

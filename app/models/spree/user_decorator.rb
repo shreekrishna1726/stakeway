@@ -19,5 +19,12 @@ module Spree
 
 
 
+		def create_profile_after_first_order_complete
+			@profile = build_profile(referral_id: Profile.all_needy_parent.first.uuid, active:true)
+			p @profile
+		end
+
+
+
 	end
 end

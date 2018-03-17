@@ -1,10 +1,14 @@
 module Spree
 	class ProfilesController < Spree::BaseController
+  before_action :authenticate_user!
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   # before_action :validate_profile, only: [:new]
   before_action :check_referral_user, only: :create
   before_action :check_validate_referral, only: :create
   
+
+  include Spree::Api::ApiHelpers
+  include Spree::Core::ControllerHelpers::Order
   # GET /profiles
   # GET /profiles.json
   def index
@@ -14,11 +18,9 @@ module Spree
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    if @profile.user.has_orders?
-      current_spree_user.profile.update(active: true)
+    if !@profile.user.orders.blank?
+      redirect_to '/checkout/address'
     else
-      p "------------------"
-      p @profile.active
       if !@profile.active
         redirect_to new_charge_path(profile: @profile)
       end
@@ -28,7 +30,11 @@ module Spree
 
   # GET /profiles/new
   def new
-    @profile = Profile.new
+    if current_spree_user.profile == nil 
+      @profile = Profile.new
+    else
+      redirect_to profile_path(current_spree_user.profile)
+    end
   end
 
   # GET /profiles/1/edit
@@ -103,8 +109,6 @@ module Spree
     def check_referral_user
       if !current_spree_user.has_spree_role? :admin
         @referral_id = params[:profile][:referral_id]
-        p "----------------------------"
-
         p @referral_id
         @referral_user  = Profile.find_by_uuid(@referral_id)
         if @referral_user

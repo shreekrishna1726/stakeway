@@ -1,7 +1,7 @@
 
   li
-    a href="#"  data-toggle="tooltip" title="#{profile.try(:full_name)}-#{profile.try(:id)}" 
-      i class="fa fa-user-o" aria-hidden="true"
+    a href="#"  data-toggle="tooltip" title="#{profile.try(:full_name)}-#{profile.try(:id)}"  
+    	= profile.try(:full_name)
     -if !profile.children.blank?
     ul
       - profile.children.each do |sub_child|

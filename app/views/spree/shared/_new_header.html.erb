@@ -13,9 +13,11 @@
         <li class="hidden"> <a href="#page-top"></a> </li>
         <li> <a class="page-scroll" href="/products">Mall</a> </li>
         <li> <a class="page-scroll" href="/services">Services</a> </li>
-        <li> <a class="page-scroll" href="#contact">Contact Us</a> </li>
+        <li> <a class="page-scroll" href="/contact-us">Contact Us</a> </li>
         <% if spree_user_signed_in? %>
+          <%if current_spree_user.profile.present?%>
           <li><%= link_to "My Account", profile_path(current_spree_user.profile), class: "page-scroll"%></li>
+          <%end%>
           <li><%= link_to "Log out", logout_path, class: "page-scroll"%></li>
         <% else %>
         <li> <a class="page-scroll" href="/login">Login</a> </li>
@@ -26,5 +28,5 @@
   </div>
   <!-- /.container -->
   <div><div class="alert-box">
-      <marquee style="color: red;">MAINTENANCE NOTIFICATION - This site is under maintenance <span style="color: white;">(Referral-Code <%= uuid_without_child.try(:uuid)%>)</span></marquee>
+      <center style="color: red;">MAINTENANCE NOTIFICATION - This site is under maintenance <span style="color: white;">(Referral-Code <%= uuid_without_child.try(:uuid)%>)</span></center>
 </nav>

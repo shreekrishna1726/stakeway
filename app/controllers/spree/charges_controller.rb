@@ -1,5 +1,5 @@
 module Spree
-	class ChargesController < Spree::BaseController
+  class ChargesController < Spree::BaseController
       
 
     def new
