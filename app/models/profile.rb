@@ -90,10 +90,10 @@ class Profile < ApplicationRecord
 				@depth_level = parent_profile.subtree.collect(&:ancestry_depth)
 				@last_depth_level = @depth_level.uniq.last
 				@node_count_on_depth = self.countchild(parent_profile)
-				if @last_depth_level < 6
+				if @last_depth_level < 2
 					parent_profile.user.update_and_create_store_credits
 					update_parent_referral_amount(parent_profile)
-				elsif @last_depth_level > 6 && (5 ** @last_depth_level < @node_count_on_depth)
+				elsif @last_depth_level > 2 && (5 ** @last_depth_level < @node_count_on_depth)
 					parent_profile.user.update_and_create_store_credits
 					update_parent_referral_amount(parent_profile)
 				end
