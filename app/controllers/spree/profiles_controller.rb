@@ -18,11 +18,13 @@ module Spree
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    if !@profile.user.orders.blank?
-      redirect_to '/checkout/address'
-    else
-      if !@profile.active
-        redirect_to new_charge_path(profile: @profile)
+    if !@profile.active
+      if !@profile.user.orders.blank?
+        redirect_to '/checkout/address'
+      else
+        if !@profile.active
+          redirect_to new_charge_path(profile: @profile)
+        end
       end
     end
     @profile_children = @profile.subtree.collect(&:ancestry_depth)
@@ -131,8 +133,7 @@ module Spree
 
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
-      
-        @profile = current_spree_user.profile rescue current_spree_user.profile
+      @profile = current_spree_user.profile rescue current_spree_user.profile
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

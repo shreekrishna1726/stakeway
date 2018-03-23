@@ -6,7 +6,7 @@ module Spree
 
 
 		def update_and_create_store_credits
-			store_credits.create(category_id: 1, created_by_id: 1, amount: 100.0, memo: '', currency: 'USD', currency: 1)
+			 p store_credits.create(category_id: 1, created_by_id: 1, amount: 100.0, memo: '', currency: 'USD', currency: 1).errors
 		end
 
 		def has_orders?

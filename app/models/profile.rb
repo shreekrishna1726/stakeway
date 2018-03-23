@@ -42,34 +42,34 @@ class Profile < ApplicationRecord
 		return need_profiles
 	end
 
-	@@tree = {}
-	def ppppp
-		subtree.each do |e|
-		  pid = e[:parent_id]
-		  if pid == nil || !map.has_key?(pid)
-		    (@@tree[root] ||= []) << e
-		  else
-		    (@@tree[map[pid]] ||= []) << e
-		  end
-		end
+	# @@tree = {}
+	# def ppppp
+	# 	subtree.each do |e|
+	# 	  pid = e[:parent_id]
+	# 	  if pid == nil || !map.has_key?(pid)
+	# 	    (@@tree[root] ||= []) << e
+	# 	  else
+	# 	    (@@tree[map[pid]] ||= []) << e
+	# 	  end
+	# 	end
 		
-		p "---------------"
+	# 	p "---------------"
 
 
-		p @@tree
+	# 	p @@tree
 
-	end
+	# end
 
-	def comp_level
-		if children.count >= 2
-			p ""
-			children.each do |child|
-				if child.children.count > 1
-					child.comp_level
-				end
-			end 
-		end
-	end
+	# def comp_level
+	# 	if children.count >= 2
+	# 		p ""
+	# 		children.each do |child|
+	# 			if child.children.count > 1
+	# 				child.comp_level
+	# 			end
+	# 		end 
+	# 	end
+	# end
 
 
 	def all_children(children_array = [])
@@ -88,12 +88,12 @@ class Profile < ApplicationRecord
 			parent_profile = profile.parent
 			if parent_profile.children.count == 5
 				@depth_level = parent_profile.subtree.collect(&:ancestry_depth)
-				@last_depth_level = @depth_level.uniq.last
+				@last_depth_level = @depth_level.uniq.find_index(@depth_level.uniq.last)
 				@node_count_on_depth = self.countchild(parent_profile)
-				if @last_depth_level < 2
+				if @last_depth_level <= 2
 					parent_profile.user.update_and_create_store_credits
 					update_parent_referral_amount(parent_profile)
-				elsif @last_depth_level > 2 && (5 ** @last_depth_level < @node_count_on_depth)
+				elsif @last_depth_level >= 2 && (5 ** @last_depth_level < @node_count_on_depth)
 					parent_profile.user.update_and_create_store_credits
 					update_parent_referral_amount(parent_profile)
 				end
@@ -101,30 +101,30 @@ class Profile < ApplicationRecord
 		end
 	end
 
-	$gvar = 0 
-	def nested_profile(profile)
-		if profile.children?
-		  profile.children.each do |child|
-		    nested_profile(child)
-		  end
-		end 
-	end
+	# $gvar = 0 
+	# def nested_profile(profile)
+	# 	if profile.children?
+	# 	  profile.children.each do |child|
+	# 	    nested_profile(child)
+	# 	  end
+	# 	end 
+	# end
 
-	def last_depth
-		level = []
-    if child_ids.empty?
-    	p depth
-      return depth
-    else
-      return children.map{|c| c.last_depth}.max
-    end
-  end
+	# def last_depth
+	# 	level = []
+ #    if child_ids.empty?
+ #    	p depth
+ #      return depth
+ #    else
+ #      return children.map{|c| c.last_depth}.max
+ #    end
+ #  end
 
 
-  def pooooo
-	  count = subtree.collect(&:depth).uniq.count
+  # def pooooo
+	 #  count = subtree.collect(&:depth).uniq.count
 
-  end
+  # end
 
 	def self.all_needy_parent_nodes
 		curren_level = CurrentLevel.last.level
@@ -179,9 +179,6 @@ class Profile < ApplicationRecord
 
 
 	def countchild(node)
-		@depth_level = nil
-		p "--------------------"
-		p @depth_level
 		@size  = node.subtree.collect(&:ancestry_depth)
 
 		[@size.uniq.last].each{|x|@size.grep(x).size}.each_with_index do |x, index|

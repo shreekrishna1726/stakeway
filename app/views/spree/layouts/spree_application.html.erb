@@ -8,12 +8,38 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <%= render partial: 'spree/shared/head' %>
   </head>
-  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <body class="common-home   layout-1" id="<%= @body_id || 'default' %>" data-hook="body" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <%= render partial: 'spree/shared/google_analytics.js' %>
     <%= render partial: 'spree/shared/trackers/segment/initializer.js' %>
     <%= render partial: 'spree/shared/new_header' %>
       <%= yield %>
     <%= render partial: 'spree/shared/footer' %>
-    
+    <script type="text/javascript">
+      $(document).ready(function(){
+   $('.blogcarousel').owlCarousel({
+       items: 2,
+       autoPlay: 10000,
+       singleItem: false,
+       navigation: false,
+       navigationText: ['<i class="fa fa-chevron-left fa-5x"></i>', '<i class="fa fa-chevron-right fa-5x"></i>'],
+       pagination: true,
+       itemsDesktop : [1000,2],
+       itemsDesktopSmall : [979,2]
+     });
+
+       $('#slideshow0').swiper({
+       mode: 'horizontal',
+       slidesPerView: 1,
+       pagination: '.slideshow0',
+       paginationClickable: true,
+       nextButton: '.swiper-button-next',
+         prevButton: '.swiper-button-prev',
+         spaceBetween: 0,
+       autoplay: 2500,
+         autoplayDisableOnInteraction: true,
+       loop: true
+        });
+    }); 
+    </script>
   </body>
 </html>

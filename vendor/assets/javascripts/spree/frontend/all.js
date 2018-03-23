@@ -14,3 +14,8 @@
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
 });
+
+$(window).load(function() {   
+ $("#spinner").fadeOut("slow");
+}); 
+

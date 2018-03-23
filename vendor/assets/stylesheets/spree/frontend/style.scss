@@ -41,6 +41,12 @@ a {
 }
 
 
+.word-limit{
+	    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 #checkout{
 	    background: #fff;
     padding: 10px;
@@ -314,10 +320,10 @@ ul, ol {
 }
 hr {
 	height: 4px;
-	width: 70px;
+	// width: 70px;
 	text-align: center;
 	position: relative;
-	background: #E75926;
+	background: #57b846;
 	margin: 0 auto;
 	margin-bottom: 30px;
 	border: 0;
@@ -334,7 +340,7 @@ hr {
 	font-weight: 600;
 }
 .navbar-custom .navbar-brand i.fa {
-	color: #E75926;
+	color: #57b846;
 }
 .navbar-custom .navbar-brand:focus {
 	outline: 0;
@@ -346,7 +352,7 @@ hr {
 	padding: 0 4px;
 }
 .navbar-custom .navbar-toggle:hover, .navbar-custom .navbar-toggle:focus {
-	background-color: #E75926;
+	background-color: #57b846;
 	color: #ffffff;
 }
 .navbar-custom .navbar-brand .navbar-toggle:focus, .navbar-custom .navbar-brand .navbar-toggle:active {
@@ -362,13 +368,13 @@ hr {
 }
 .navbar-custom .nav li a:hover {
 	outline: 0;
-	color: #E75926;
+	color: #57b846;
 	background-color: transparent;
 }
 .navbar-custom .nav li a:focus, .navbar-custom .nav li a:active {
 	outline: 0;
 	background-color: transparent;
-	color: #E75926;
+	color: #57b846;
 }
 .navbar-custom .nav li.active {
 	outline: 0;
@@ -409,8 +415,8 @@ hr {
 	text-transform: uppercase;
 }
 #intro .intro-body .brand-heading {
-	color: #E75926;
-	text-shadow: 0 4px #a13e1a;
+	color: #57b846;
+	text-shadow: 0 4px #57b846;
 }
 #intro .intro-body .intro-text {
 	font-size: 18px;
@@ -430,7 +436,7 @@ hr {
 }
 .btn-default {
 	color: #f6f6f6;
-	background: #cf5022;
+	background: #57b846;
 	border: 0;
 	padding: 12px 24px;
 	margin: 0 8px;
@@ -439,7 +445,7 @@ hr {
 }
 .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
 	color: #f6f6f6;
-	background-color: #a13e1a;
+	background-color: #57b846;
 }
 .section-title.center {
 	padding: 30px 0;
@@ -476,8 +482,8 @@ hr {
 	text-transform: uppercase;
 }
 #hero .hero-body .brand-heading {
-	color: #E75926;
-	text-shadow: 0 4px #a13e1a;
+	color: #57b846;
+	text-shadow: 0 4px #57b846;
 }
 #hero .hero-body .hero-text {
 	font-size: 18px;
@@ -550,12 +556,12 @@ hr {
 }
 #services i.fa {
 	font-size: 36px;
-	color: #E75926;
+	color: #57b846;
 	transition: all 0.5s;
 }
 /* Gallery Section */
 #works {
-	padding: 120px 0;
+	padding: 40px 0;
 	background: #fff;
 }
 .categories {
@@ -577,13 +583,13 @@ ol.type li a {
 }
 ol.type li a.active {
 	color: #f6f6f6;
-	border: 1px solid #cf5022;
-	background: #cf5022;
+	border: 1px solid #57b846;
+	background: #57b846;
 }
 ol.type li a:hover {
 	color: #f6f6f6;
-	border: 1px solid #cf5022;
-	background: #cf5022;
+	border: 1px solid #57b846;
+	background: #57b846;
 }
 .isotope-item {
 	z-index: 2
@@ -620,7 +626,7 @@ ol.type li a:hover {
 	margin-bottom: 30px;
 }
 .portfolio-item .hover-bg {
-	max-height: 190px;
+	height: 265px;
 	overflow: hidden;
 	position: relative;
 }
@@ -683,23 +689,32 @@ ol.type li a:hover {
 }
 /* Team Section */
 #team {
-	padding: 140px 0;
+	padding: 20px 0;
+	background: #e6e6e6;
+}
+#product {
+	padding: 40px 0;
 	background: #e6e6e6;
 }
 img.img-thumbnail.team-img {
 	width: 200px;
 	height: 200px;
 	border: 0;
-	border-radius: 0;
-	background-color: #f6f6f6;
+	// border-radius: 0;
+	// background-color: #f6f6f6;
 }
 #team .thumbnail {
 	background: transparent;
-	border: 0;
+	// border: 0;	
+	    border-radius: 0;
+    padding: 0;
+	    // border: 1px solid #fff;
+    background: white;
 }
 #team .thumbnail .caption {
 	padding: 9px;
-	color: #777;
+	color: #fff;
+	background: #cf5023;
 }
 /* Testimonials Section */
 #testimonials {
@@ -788,7 +803,7 @@ label {
 	box-shadow: transparent;
 }
 #contact .btn-default {
-	background: #cf5022;
+	background: #57b846;
 	border: 0;
 	border-radius: 4px;
 	padding: 10px 20px;
@@ -798,7 +813,7 @@ label {
 }
 #contact .btn-default:hover, #contact .btn-default:focus {
 	color: #f6f6f6;
-	background: #a13e1a;
+	background: #57b846;
 }
 .btn:active, .btn.active {
 	background-image: none;
@@ -820,12 +835,12 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 #contact .social i.fa {
 	font-size: 24px;
 	padding-top: 8px;
-	color: #cf5022;
+	color: #57b846;
 	border-radius: 4px;
 	transition: all 0.3s;
 }
 #contact .social i.fa:hover {
-	color: #a13e1a;
+	color: #57b846;
 }
 /* Footer Section*/
 #footer {
