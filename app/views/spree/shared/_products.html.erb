@@ -23,7 +23,7 @@
             formats: :js,
             locals: { taxon: @taxon, products: products } %>
 <% if products.any? %>
-  <div id="products" class="row" data-hook>
+  <div id="products" class="" data-hook>
     <%= render partial: 'spree/products/product', collection: products, locals: { taxon: @taxon } %>
   </div>
 <% end %>

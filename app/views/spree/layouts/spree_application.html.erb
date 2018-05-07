@@ -6,40 +6,23 @@
 <!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
   <head data-hook="inside_head">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="http://bionic.doradothemes.com/store7/themes/dor_bionic7/assets/cache/theme-e92495.css">
+    <link rel="stylesheet" type="text/css" href="http://bionic.doradothemes.com/store7/themes/dor_bionic7/assets/dorado/css/topbar.css">
+    <link rel="stylesheet" type="text/css" href="http://bionic.doradothemes.com/store7/themes/dor_bionic7/assets/dorado/css/header.css">
+    <link rel="stylesheet" type="text/css" href="http://bionic.doradothemes.com/store7/themes/dor_bionic7/assets/dorado/css/oregon.css">
+    <link rel="stylesheet" type="text/css" href="http://bionic.doradothemes.com/store7/themes/dor_bionic7/assets/dorado/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="http://bionic.doradothemes.com/store7/themes/dor_bionic7/assets/dorado/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="http://bionic.doradothemes.com/store7/themes/dor_bionic7/assets/dorado/css/color/52afc6.css">
     <%= render partial: 'spree/shared/head' %>
   </head>
-  <body class="common-home   layout-1" id="<%= @body_id || 'default' %>" data-hook="body" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <body  data-hook="body"  data-spy="scroll" data-target=".navbar-fixed-top" id="category" class="lang-en country-us currency-usd layout-left-column page-category tax-display-disabled category-id-3 category-shop category-id-parent-2 category-depth-level-2 proCateCol1 proDetailCol1 proCateRowNumber6  dorHoverProduct2">
     <%= render partial: 'spree/shared/google_analytics.js' %>
     <%= render partial: 'spree/shared/trackers/segment/initializer.js' %>
     <%= render partial: 'spree/shared/new_header' %>
       <%= yield %>
     <%= render partial: 'spree/shared/footer' %>
-    <script type="text/javascript">
-      $(document).ready(function(){
-   $('.blogcarousel').owlCarousel({
-       items: 2,
-       autoPlay: 10000,
-       singleItem: false,
-       navigation: false,
-       navigationText: ['<i class="fa fa-chevron-left fa-5x"></i>', '<i class="fa fa-chevron-right fa-5x"></i>'],
-       pagination: true,
-       itemsDesktop : [1000,2],
-       itemsDesktopSmall : [979,2]
-     });
-
-       $('#slideshow0').swiper({
-       mode: 'horizontal',
-       slidesPerView: 1,
-       pagination: '.slideshow0',
-       paginationClickable: true,
-       nextButton: '.swiper-button-next',
-         prevButton: '.swiper-button-prev',
-         spaceBetween: 0,
-       autoplay: 2500,
-         autoplayDisableOnInteraction: true,
-       loop: true
-        });
-    }); 
-    </script>
+    <script type="text/javascript" href="http://bionic.doradothemes.com/store7/themes/core.js"></script>
+    <script type="text/javascript" href="http://bionic.doradothemes.com/store7/themes/dor_bionic7/assets/js/theme.js"></script>
+    <script type="text/javascript" href="http://bionic.doradothemes.com/store7/themes/dor_bionic7/assets/js/custom.js"></script>
   </body>
 </html>

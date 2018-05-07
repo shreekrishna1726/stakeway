@@ -1,36 +1,81 @@
-<div id="team" class="text-center">
-  <div class="container">
-    <div class="section-title center">
-      <h2>Mall</h2>
-      <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
-    </div>
-      <% if "spree/products" == params[:controller] && @taxon || @taxonomies.present? %>
-        <% content_for :sidebar do %>
-          <div data-hook="homepage_sidebar_navigation">
-            <% if "spree/products" == params[:controller] && @taxon %>
-              <%= render partial: 'spree/shared/filters' %>
-            <% else %>
-              <%= render partial: 'spree/shared/taxonomies' %>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
+<section id="wrapper">
+    <div class="col-big">
+        <div class="row-items">
+            <div id="content-wrapper">
+                <section id="main">
+                    <div class="block-category card card-block hidden-sm-down">
+                        <div id="category-description" class="text-muted">
+                            <div class="dor-category-description">
+                                <div class="dor-category-description-inner">
+                                    <div class="dor-category-description-data">
+                                        <p><strong>You will find here all products collections.</strong></p>
+                                        <p>This category includes all the basics of your wardrobe and much more:</p>
+                                        <p>cellphone, laptop, headphone, smartwatch, TV!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="category-cover">
+                            <img src="http://bionic.doradothemes.com/store2/c/3-category_default/shop.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="text-xs-center hidden-md-up">
+                      <% if "spree/products" == params[:controller] && @taxon || @taxonomies.present? %>
+                        <% content_for :sidebar do %>
+                          <div data-hook="homepage_sidebar_navigation">
+                            <% if "spree/products" == params[:controller] && @taxon %>
+                              <%= render partial: 'spree/shared/filters' %>
+                            <% else %>
+                              <%= render partial: 'spree/shared/taxonomies' %>
+                            <% end %>
+                          </div>
+                        <% end %>
+                      <% end %>
+                    </div>
+                    <section id="products">
+                        <div>
+                            <div id="js-product-list">
+                                <div class="products row">
+                                   <% if "spree/products" == params[:controller] && @taxon || @taxonomies.present? %>
+                                    <% content_for :sidebar do %>
+                                      <div data-hook="homepage_sidebar_navigation">
+                                        <% if "spree/products" == params[:controller] && @taxon %>
+                                          <%= render partial: 'spree/shared/filters' %>
+                                        <% else %>
+                                          <%= render partial: 'spree/shared/taxonomies' %>
+                                        <% end %>
+                                      </div>
+                                    <% end %>
+                                  <% end %>
 
-      <% if params[:keywords] %>
-        <div data-hook="search_results">
-          <% if @products.empty? %>
-            <h6 class="search-results-title"><%= Spree.t(:no_products_found) %></h6>
-          <% else %>
-            <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
-          <% end %>
+                                  <% if params[:keywords] %>
+                                    <div data-hook="search_results">
+                                      <% if @products.empty? %>
+                                        <h6 class="search-results-title"><%= Spree.t(:no_products_found) %></h6>
+                                      <% else %>
+                                        <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+                                      <% end %>
+                                    </div>
+                                  <% else %>
+                                    <div data-hook="homepage_products">
+                                      <% cache(cache_key_for_products) do %>
+                                        <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+                                      <% end %>
+                                    </div>
+                                  <% end %>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </section>
+
+                </section>
+
+            </div>
+
         </div>
-      <% else %>
-        <div data-hook="homepage_products">
-          <% cache(cache_key_for_products) do %>
-            <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
-          <% end %>
-        </div>
-      <% end %>
-  </div>
-</div>
+    </div>
+</section>
+
+

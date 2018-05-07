@@ -1,6 +1,7 @@
 module Spree
 	class ProfilesController < Spree::BaseController
   before_action :authenticate_user!
+  before_action :premium_user!
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   # before_action :validate_profile, only: [:new]
   before_action :check_referral_user, only: :create
@@ -9,44 +10,22 @@ module Spree
 
   include Spree::Api::ApiHelpers
   include Spree::Core::ControllerHelpers::Order
-  # GET /profiles
-  # GET /profiles.json
-  def index
-    @profile = current_spree_user.profile
-  end
+  
 
-  # GET /profiles/1
-  # GET /profiles/1.json
-  def show
-    if !@profile.active
-      if !@profile.user.orders.blank?
-        redirect_to '/checkout/address'
-      else
-        if !@profile.active
-          redirect_to new_charge_path(profile: @profile)
-        end
-      end
-    end
-    @profile_children = @profile.subtree.collect(&:ancestry_depth)
-  end
 
-  # GET /profiles/new
   def new
-    if current_spree_user.profile == nil 
-      @profile = Profile.new
-    else
+    if spree_current_user.profile.present?
       redirect_to profile_path(current_spree_user.profile)
+    else
+      @profile = Profile.new
     end
   end
 
-  # GET /profiles/1/edit
+
   def edit
   end
 
-  # POST /profiles
-  # POST /profiles.json
   def create
-    # @profile = Profile.new(profile_params.merge(user_id:current_spree_user.id))
 
     respond_to do |format|
       if @profile.save
@@ -59,8 +38,11 @@ module Spree
     end
   end
 
-  # PATCH/PUT /profiles/1
-  # PATCH/PUT /profiles/1.json
+
+  def show
+    @profile_children = @profile.subtree.collect(&:ancestry_depth)
+  end
+
   def update
     respond_to do |format|
       if @profile.update(profile_params)
@@ -73,8 +55,7 @@ module Spree
     end
   end
 
-  # DELETE /profiles/1
-  # DELETE /profiles/1.json
+
   def destroy
     @profile.destroy
     respond_to do |format|
@@ -83,10 +64,10 @@ module Spree
     end
   end
 
+
   private
     def check_validate_referral
       if current_spree_user.has_spree_role? :admin
-        p "----------admin"
         params[:profile][:referral_id] = SecureRandom.uuid
         @profile = Profile.new(profile_params.merge(user_id:current_spree_user.id,tree_level:1))
 
@@ -98,11 +79,6 @@ module Spree
           redirect_to root_path, notice:"You can not use your own profile uuid as referral. "
         end
       end
-      # else
-      #   format.html { render :new }
-      #   format.json { render json: @profile.errors, status: :unprocessable_entity }
-      #   # return false
-      # endr
     end
 
 

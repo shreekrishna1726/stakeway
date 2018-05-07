@@ -1,5 +1,5 @@
 <% url = spree.product_path(product, taxon_id: taxon.try(:id)) %>
-<div id="product_<%= product.id %>" class="col-md-3 col-sm-6 col-xs-6 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
+<!-- <div id="product_<%= product.id %>" class="col-md-3 col-sm-6 col-xs-6 product-list-item" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
   <div class="panel panel-default">
     <% cache(taxon.present? ? [I18n.locale, current_currency, taxon, product] : cache_key_for_product(product)) do %>
       <div class="panel-body text-center product-body">
@@ -19,4 +19,56 @@
       </div>
     <% end %>
   </div>
-</div>
+</div> -->
+
+<article class="ajax_block_product product-miniature js-product-miniature" data-id-product="3" data-id-product-attribute="85">
+      <div class="product-container">
+          <div class="dor-display-product-info">
+              <div class="left-block">
+                  <div class="product-image-container">
+                      <%= link_to url, itemprop: "url", class:"thumbnail product-thumbnail product_img_link"  do %>
+                          <%= small_image(product, itemprop: "image", class:"img-responsive thumbnail-image-1") %><br/>
+                      <% end %>
+                      <div class="box-items">
+                          <a class="new-box box-status" href="http://bionic.doradothemes.com/store2/en/shop/3-samsung-galaxy-note8.html">
+                              <span class="new-label">New</span>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="right-block">
+
+                  <h5 class="product-title-item" itemprop="name">
+                    <%= link_to url, itemprop: "url" do %>
+                      <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+                    <% end %>
+                    </h5>
+
+                  <div class="review-price-product">
+                      <div class="dor-show-value-product clearfix">
+
+                          <div class="content_price">
+                              <div class="product-price-and-shipping">
+
+                                  <span itemprop="price" class="price"><%= display_price(product) %></span>
+
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="product-more-options">
+              <form action="#"  class="dor-addcart-button">
+                  <div class="add">
+                      <%= link_to url, itemprop: "url", class:"cart-button button ajax_add_to_cart_button btn btn-default add-to-cart" do %>
+                        <i class="material-icons shopping-cart"></i>
+                          <span class="hidden">Add to cart</span>
+                      <% end %>
+                  </div>
+          </div>
+
+      </div>
+  </article>

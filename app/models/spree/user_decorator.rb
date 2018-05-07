@@ -1,12 +1,24 @@
 module Spree
 	User.class_eval do
+
 		has_one :profile
 
+		# validates :phone_number, presence: :true, uniqueness: :true
 
+		attr_accessor :email_confirmation, :login_with_phone
+
+
+		# def login=(login)
+	 #    @login = login
+	 #  end
+
+	 #  def login
+	 #    @login || self.phone_number || self.email
+	 #  end
 
 
 		def update_and_create_store_credits
-			 p store_credits.create(category_id: 1, created_by_id: 1, amount: 100.0, memo: '', currency: 'USD', currency: 1).errors
+			store_credits.create(category_id: 1, created_by_id: 1, amount: 100.0, memo: '', currency: 'USD', currency: 1)
 		end
 
 		def has_orders?
@@ -15,6 +27,10 @@ module Spree
 
 		def has_profile?
 			profile.present?
+		end
+
+		def isPremium?
+			active?
 		end
 
 

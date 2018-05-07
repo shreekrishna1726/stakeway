@@ -17,7 +17,12 @@ gem 'spree_gateway', '~> 3.3'
 gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings'
 gem 'stripe'
 
+gem 'Instamojo-rb'
+
 gem 'ancestry'
+
+
+gem 'paypal-sdk-rest'
 
 group :development do
     gem 'capistrano',  '3.7.2',       require: false

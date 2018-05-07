@@ -1,43 +1,39 @@
 module Spree
   class ChargesController < Spree::BaseController
-      
+    before_action :authenticate_user!
+
+    require 'Instamojo-rb'
+    @@api = Instamojo::API.new("e737b4ef3f19195217e591fc8ad3e057", "0c12707dd9d2a2bda1a4fd7893e83a9e")
 
     def new
-      if !params[:profile].blank?
-        @profile = current_spree_user.profile
-        p @profile
+      if current_spree_user.profile
+        redirect_to profile_path(current_spree_user.profile), notice: "You Are Already Register Our Channel:)"
+      else
+        payment_request = @@api.client.payment_request({buyer_name:"XYZ",phone: "9971907800", amount:100, purpose: 'Registration Fee', send_email: true, email: current_spree_user.email, redirect_url: 'http://localhost:3000/charges/paymentDetail/'})
+        redirect_to payment_request.longurl
+      end
+    end
+
+
+    def paymentDetail
+      @status = @@api.client.payment_detail(params[:payment_id])
+      p "-------------------------------"
+      p @status 
+      if @status.status == 'Credit'
+        current_spree_user.update_attributes(active: true)
+        if current_spree_user.profile.parent.present?
+          current_spree_user.profile.update_parent_referral_amount(current_spree_user.profile)
+        end
+        redirect_to profile_path(current_spree_user.profile)
       else
         redirect_to '/'
       end
     end
 
-    def create
-      # Amount in cents
-      @amount = 150
-
-      customer = Stripe::Customer.create(
-        :email => params[:stripeEmail],
-        :source  => params[:stripeToken]
-      )
-
-      charge = Stripe::Charge.create(
-        :customer    => customer.id,
-        :amount      => @amount,
-        :description => 'Rails Stripe customer',
-        :currency    => 'usd'
-      )
-      if charge.save 
-        charge_payment = current_spree_user.profile.build_charge(amount: charge["amount"], txn_number:charge["balance_transaction"]).save
-        current_spree_user.profile.update_attributes(active: true)
-        if current_spree_user.profile.parent.present?
-          current_spree_user.profile.update_parent_referral_amount(current_spree_user.profile)
-        end
-        redirect_to '/' 
-      end
-
-    rescue Stripe::CardError => e
-      flash[:error] = e.message
-      redirect_to new_charge_path
+    def read_more
+      
     end
+
+
   end
 end

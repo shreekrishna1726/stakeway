@@ -79,7 +79,7 @@ iframe {
 
 .container-login100 {
   width: 100%;  
-  min-height: 100vh;
+  min-height: 70vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -93,11 +93,13 @@ iframe {
   background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
   background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
   background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-  background: linear-gradient(-135deg, #fbf8fb, #434446);
+  background: linear-gradient(-135deg, #fbf8fb, #ffffff);
+      background-image: url(https://www.planwallpaper.com/static/images/6813800-toy-car-wallpaper-hd_SBxvMEh.jpg);
+    background-size: cover;
 }
 
 .wrap-login100 {
-      background: linear-gradient(-135deg, #38404a, #f7f7f8);
+      background: linear-gradient(-135deg, #52afc8, #f7f7f8);
   width: 460px;
   /*background: #fff;*/
   border-radius: 10px;
@@ -254,7 +256,9 @@ iframe {
   width: 100%;
   height: 50px;
   border-radius: 25px;
-  background: #57b846;
+  background: #52afc8;
+  
+  border-color: #fff !important;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;

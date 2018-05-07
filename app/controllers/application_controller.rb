@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
+
   protect_from_forgery with: :exception
 
 
-
+  
   private
 
   def user_must_be_active!
@@ -12,8 +13,15 @@ class ApplicationController < ActionController::Base
 
 
   def authenticate_user!
-      if !spree_user_signed_in?
-        redirect_to login_path, :notice => 'Please Login or Sign Up.'
-      end
+    if !spree_user_signed_in?
+      redirect_to login_path, :notice => 'Please Login or Sign Up.'
     end
+  end
+
+  def premium_user!
+  	if !spree_current_user.isPremium?
+  		redirect_to '/charges/new'
+  	end
+  end
+
 end
