@@ -21,7 +21,10 @@
   </div>
 </div> -->
 
-<article class="ajax_block_product product-miniature js-product-miniature" data-id-product="3" data-id-product-attribute="85">
+
+
+
+<!-- <article class="ajax_block_product product-miniature js-product-miniature" data-id-product="3" data-id-product-attribute="85">
       <div class="product-container">
           <div class="dor-display-product-info">
               <div class="left-block">
@@ -71,4 +74,29 @@
           </div>
 
       </div>
-  </article>
+  </article>  -->
+
+<li class="item product product-item" style="-webkit-animation-delay:0ms; -moz-animation-delay:0ms; -o-animation-delay:0ms; animation-delay:0ms; -webkit-animation-duration:400ms;-moz-animation-duration:400ms;-o-animation-duration:400ms;animation-duration:400ms;">
+  <div class="product-item-info item-inner style1" data-container="product-grid">
+      <div class="box-image">
+          <%= link_to url, itemprop: "url", class:"thumbnail product-thumbnail product_img_link"  do %>
+              <%= small_image(product, itemprop: "image", class:"img-responsive thumbnail-image-1") %><br/>
+          <% end %>
+          
+         </div>
+      <div class="product details product-item-details box-info">
+          <h2 class="product name product-item-name product-name">
+             <%= link_to url, itemprop: "url" do %>
+                <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+              <% end %>
+          </h2>
+          <div class="price-box price-final_price" data-role="priceBox" data-product-id="2073"> <span class="special-price">  <span class="price-container price-final_price tax weee"> <span class="price-label">Special Price</span> <span id="product-price-2073" data-price-amount="40" data-price-type="finalPrice" class="price-wrapper "><span class="price"><%= display_price(product) %></span></span>
+              </span>
+              </span> <span class="old-price">  <span class="price-container price-final_price tax weee"> <span class="price-label">Regular Price</span> <span id="old-price-2073" data-price-amount="43" data-price-type="oldPrice" class="price-wrapper "><span class="price"><%= display_price(product) %></span></span>
+              </span>
+              </span>
+          </div>
+          <div class="product-item-inner"></div>
+      </div>
+  </div>
+</li>

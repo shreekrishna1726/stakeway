@@ -1,431 +1,562 @@
-<section id="topbar" class="dor-topbar-wrapper">
-
-    <div id="dor-topbar01" class="dor-topbar-wrapper">
-        <div class="dor-topbar-inner">
-            <div class="col-big">
-                <div class="row-items">
-                    <div class="dor-topbar-line">
-                        <div class="dor-topbar-line-inner">
-                            <div class="dor-topbar-line-wrapper row">
-                                <div class="topbar-infomation col-lg-8 col-sm-8 pull-left">
-                                    <ul>
-                                        <li class="phone-shop&quot;"><span><i class="material-icons"></i> +91-997-1907-800</span></li>
-                                        <li class="mail-shop"><span><i class="material-icons"></i> support@stakeway.com</span></li>
-                                    </ul>
-                                </div>
-                                <div class="topbar-infomation-right col-lg-4 col-sm-4 pull-right">
-                                    <ul>
-                                        <li class="store-location"><span><i class="material-icons"></i>Referral-Code <%= uuid_without_child.try(:uuid)%></span></li>
-
-                                    </ul>
-                                </div>
-                            </div>
+<div class="header-container header-style-1">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 language-currency-top">
+                    <div class="currency-wrapper">
+                        <div class="switcher currency switcher-currency" id="switcher-currency-nav"><strong class="label switcher-label"><span>Referral-Code <%= uuid_without_child.try(:uuid)%></span></strong>
                         </div>
                     </div>
-
-                    <a href="#" rel="nofollow" class="select-setting hidden pull-right"><i class="material-icons"></i></a>
                 </div>
             </div>
         </div>
     </div>
-
-</section>
-<header id="header" class="header-absolute miniCartv1">
-   <div id="dor-header01" class="header-content-wrapper dor-header haveTopbar2">
-      <div class="header-banner">
-      </div>
-      <div class="header-top no-padding">
-         <div class="col-big">
+    <div class="header-middle">
+        <div class="container">
             <div class="row">
-               <div class="col-md-2 dor-main-logo">
-                  <div class="main-logo-inner">
-                     <div class="main-logo-wrapper">
-                        <div class="item-logo" id="_desktop_logo">
-                           <h1 class="h1-logo no-margin" style="text-align: initial;">
-                              <a href="/" style="font-size: 34px;color: #52afc7;">
-                               Stakeway.com
-                              </a>
-                           </h1>
-                        </div>
-                        <div class="item-logo top-logo" id="_mobile_logo"></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="dor-mainmenu-inner col-md-8">
-                  <div class="head-dormenu">
-                     <nav class="dor-megamenu col-lg-12 col-sx-12 col-sm-12">
-                        <div class="navbar navbar-default " role="navigation">
-                           <!-- Brand and toggle get grouped for better mobile display -->
-                           <div class="navbar-header">
-                              <button type="button" class="navbar-toggle open_menu">
-                              <i class="material-icons"></i>
-                              </button>
-                           </div>
-                           <!-- Collect the nav links, forms, and other content for toggling -->
-                           <div id="dor-top-menu" class="collapse navbar-collapse navbar-ex1-collapse">
-                              <div class="close_menu" style="display:none;">
-                                 <span class="btn-close"><i class="material-icons"></i></span>
-                              </div>
-                              <div class="mobile-logo-menu hidden-lg hidden-md">
-                                 <a href="http://bionic.doradothemes.com/store7/" title="Bionic Store">
-                                 <img class="logo img-responsive" src="http://bionic.doradothemes.com/store7/modules/dor_imageslider/images/logo-menu.png" alt="Bionic Store">
-                                 </a>
-                              </div>
-                              <ul class="nav navbar-nav megamenu">
-                                 <li class=" parent dropdown aligned-fullwidth">
-                                    <a  data-rel="3" href="/products"><span class="menu-title">Shop</span><b class="caret"></b></a><span class="caretmobile hidden"></span>
-                                 </li>
-                                 <li class=" parent dropdown aligned-fullwidth">
-                                    <a  href="#"><span class="menu-title">Elements</span><b class="caret"></b></a><span class="caretmobile hidden"></span>
-                                    <!-- <ul class="dropdown-menu level1 megamenu-content" role="menu" style="background-image:url(http://bionic.doradothemes.com/img/cms/dorado/menu/smartphone_bg.png);background-repeat:no-repeat;width:900px;">
-                                       <li>
-                                          <div class="row">
-                                             <div class="col-sm-3">
-                                                <div class="widget-content">
-                                                   <div class="widget-links block ">
-                                                      <div class="widget-inner block_content">
-                                                         <div id="tabs1895294017" class="panel-group">
-                                                            <ul class="nav-links" data-id="myTab">
-                                                               <li><a href="#"><i class="fa fa-cubes"></i>Visual Composer ($34 saved)</a></li>
-                                                               <li><a href="#"><i class="fa fa-image"></i>Revolution Slider ($19 saved)</a></li>
-                                                               <li><a href="#"><i class="fa fa-rocket"></i>Blazing Fast Loading Speed</a></li>
-                                                               <li><a href="#"><i class="fa fa-hand-o-up"></i>One-Click Sample Data</a></li>
-                                                               <li><a href="#"><i class="fa fa-laptop"></i>Live Customizer</a></li>
-                                                               <li><a href="#"><i class="fa fa-magic"></i>Unlimited Colors</a></li>
-                                                               <li><a href="#"><i class="fa fa-desktop"></i>Responsive &amp; Retina</a></li>
-                                                            </ul>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="col-sm-3">
-                                                <div class="widget-content">
-                                                   <div class="widget-links block ">
-                                                      <div class="widget-inner block_content">
-                                                         <div id="tabs379212207" class="panel-group">
-                                                            <ul class="nav-links" data-id="myTab">
-                                                               <li><a href="#"><i class="fa fa-css3"></i>Smooth CSS3 Animation</a></li>
-                                                               <li><a href="#"><i class="fa fa-envelope"></i>ContactForm 7 Supported</a></li>
-                                                               <li><a href="#"><i class="fa fa-minus"></i>Sticky Header</a></li>
-                                                               <li><a href="#"><i class="fa fa-google"></i>600+ Google Fonts</a></li>
-                                                               <li><a href="#"><i class="fa fa-language"></i>WPML Supported</a></li>
-                                                               <li><a href="#"><i class="fa fa-font"></i>Font Awesome Icons</a></li>
-                                                               <li><a href="#"><i class="fa fa-html5"></i>Bootstrap 3.x Based</a></li>
-                                                            </ul>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="col-sm-3">
-                                                <div class="widget-content">
-                                                   <div class="widget-links block ">
-                                                      <div class="widget-inner block_content">
-                                                         <div id="tabs71883510" class="panel-group">
-                                                            <ul class="nav-links" data-id="myTab">
-                                                               <li><a href="#"><i class="fa fa-shopping-cart"></i>eCommerce Compatible</a></li>
-                                                               <li><a href="#"><i class="fa fa-check"></i>Products Compare</a></li>
-                                                               <li><a href="#"><i class="fa fa-heart"></i>Products Wishlist</a></li>
-                                                               <li><a href="#"><i class="fa fa-minus"></i>20+ Homepage Styles</a></li>
-                                                               <li><a href="#"><i class="fa fa-minus"></i>4+ Header Styles</a></li>
-                                                               <li><a href="#"><i class="fa fa-newspaper-o"></i>3+ News Archive Styles</a></li>
-                                                               <li><a href="#"><i class="fa fa-columns"></i>3+ Contact Page Styles</a></li>
-                                                            </ul>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </li>
-                                    </ul> -->
-                                 </li>
-                                 <li class=" "><a href="#"><span class="menu-title">Gallery</span><span class="menu-label-new">new</span></a></li>
-                                 <li class=" parent dropdown aligned-right">
-                                    <a data-rel="6" href="/charges/read_more"><span class="menu-title">MLM Service</span><b class="caret"></b></a><span class="caretmobile hidden"></span>
-                                 </li>
-                                 <li class=" parent dropdown aligned-right">
-                                    <a  href="#"><span class="menu-title">Contact</span><b class="caret"></b></a><span class="caretmobile hidden"></span>
-                                 </li>
-                              </ul>
-                           </div>
-                        </div>
-                     </nav>
-                  </div>
-               </div>
-               <div class="dor-header-setting-inner col-md-2">
-                  <div class="head-dorsetting pull-right">
-                     <nav class="header-nav">
-                        <div class="hidden-sm-down-">
-                           <div class="right-nav">
-                              <div class="nav-search-button hidden"><button type="button"><i class="pe-7s-search"></i></button></div>
-                              
-                              <div class="user-info selection-options-wrapper">
-                                 <label class="hidden">Account</label>
-                                 <span class="line-selected hidden"><i class="pe-7s-user"></i> <span class="select-hidden hidden">Account</span></span>
-                                 <ul class="toogle_content">
-                                    <% if spree_user_signed_in? %>
-                                      <%if current_spree_user.profile.present?%>
-                                      <li><%= link_to "My Account", profile_path(current_spree_user.profile), class: "page-scroll"%></li>
-                                      <%end%>
-                                      <li><%= link_to "Log out", logout_path, class: "page-scroll"%></li>
-                                    <% else %>
-                                    <li> <a class="page-scroll" href="/login">Login</a> </li>
-                                    <% end %>
-                                 </ul>
+                <div class="col-lg-2 col-md-3 col-sm-3 logo-header">
+                    <div class="logo-wrapper">
+                        <h1 class="logo-content"><strong class="logo"><a class="logo" href="/" title="Stakeway.com"><%=image_tag "logo.png"%></a></strong></h1></div>
+                </div>
+                <div class="col-lg-6 col-md-5 col-sm-6 col-xs-4 main-megamenu">
+                    <div class="navigation-megamenu-wrapper">
+                        <nav class="sm_megamenu_wrapper_horizontal_menu sambar" id="sm_megamenu_menu5af58bd1b5158" data-sam="3896067761526041553">
+                            <div class="sambar-inner"><span class="btn-sambar" data-sapi="collapse" data-href="#sm_megamenu_menu5af58bd1b5158"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></span>
+                                <div class="mega-content">
+                                    <ul class="horizontal-type sm-megamenu-hover sm_megamenu_menu sm_megamenu_menu_black" data-jsapi="on">
+                                        
 
-                              </div>
-                        </div>
-                        <div class="hidden-md-up text-xs-center mobile hidden">
-                           <div class="pull-xs-left" id="menu-icon">
-                              <i class="material-icons d-inline"></i>
+                                        
+                                        
+                                        <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  ">
+                                            <a class="sm_megamenu_head sm_megamenu_drop " href="/products" id="sm_megamenu_291"> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Shop</span> </span>
+                                            </a>
+                                        </li>
+                                        <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  ">
+                                            <a class="sm_megamenu_head sm_megamenu_drop " href="/charges/read_more" id="sm_megamenu_287"> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">About Us</span> </span>
+                                            </a>
+                                        </li>
+                                        <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  ">
+                                            <a class="sm_megamenu_head sm_megamenu_drop " href="http://magento2.flytheme.net/themes/sm_emarket/german/contact-us.html" id="sm_megamenu_290"> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Contact Us</span> </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
                            </div>
-                           <div class="pull-xs-right" id="_mobile_user_info"></div>
-                           <div class="clearfix"></div>
+                    <div class="navigation-mobile-container">
+                        <!--COLLAPSE-->
+                        <!--SIDEBAR-->
+                        <div class="nav-mobile-container sidebar-type">
+                            <div class="btn-mobile"><a id="sidebar-button" class="button-mobile sidebar-nav" title="Categories"><i class="fa fa-bars"></i><span class="hidden">Categories</span></a></div>
+                            <nav id="navigation-mobile" class="navigation-mobile"></nav>
+                            <script type="text/javascript">
+                                require([
+                                    'jquery'
+                                ], function($) {
+                                    $('#sidebar-button').click(function() {
+                                        $('body').toggleClass('navbar-active');
+                                        $(this).toggleClass('active');
+                                    });
+                                });
+                            </script>
                         </div>
-                     </nav>
-                  </div>
-               </div>
+                        <script type="text/javascript">
+                            require([
+                                'jquery'
+                            ], function($) {
+                                $('.btn-submobile').click(function() {
+                                    $(this).prev().slideToggle(200);
+                                    $(this).toggleClass('btnsub-active');
+                                    $(this).parent().toggleClass('parent-active');
+                                });
+
+                                function cloneMegaMenu() {
+                                    var breakpoints = 991;
+                                    var doc_width = $(window).width();
+                                    if (doc_width <= breakpoints) {
+                                        var horizontalMegamenu = $('.sm_megamenu_wrapper_horizontal_menu .horizontal-type');
+                                        var verticalMegamenu = $('.sm_megamenu_wrapper_vertical_menu .vertical-type');
+                                        $('#navigation-mobile').append(horizontalMegamenu);
+                                        $('#navigation-mobile').append(verticalMegamenu);
+                                    } else {
+                                        var horizontalMegamenu = $('#navigation-mobile .horizontal-type');
+                                        var verticalMegamenu = $('#navigation-mobile .vertical-type');
+                                        $('.sm_megamenu_wrapper_horizontal_menu .sambar-inner .mega-content').append(horizontalMegamenu);
+                                        $('.sm_megamenu_wrapper_vertical_menu .sambar-inner .mega-content').append(verticalMegamenu);
+                                    }
+                                }
+
+                                cloneMegaMenu();
+
+                                $(window).resize(function() {
+                                    cloneMegaMenu();
+                                });
+
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-3 col-xs-8 header-middle-right">
+                    <div class="user-info">
+                      <% if spree_user_signed_in? %>
+                        <%= link_to "Account", profile_path(current_spree_user.profile)%>/
+                                      
+                        <%= link_to "Log out", logout_path%>
+                      <%else%>
+                      <i class="fa fa-lock" aria-hidden="true"></i> 
+                      <a class="creat" href="/login" title="Login">Login</a> or <a href="/signup" title="Register">Register</a> 
+                      <%end%>
+                    </div>
+                    <ul class="contact-header  hidden">
+                        <li><i class="fa fa-ambulance" aria-hidden="true">&nbsp;</i>Track You Order</li>
+                        <li><i class="fa fa-phone-square" aria-hidden="true">&nbsp;</i>Hotline (+123)4 567 890</li>
+                    </ul>
+                </div>
             </div>
-            <div id="mobile_top_menu_wrapper" class="row hidden-md-up" style="display:none;">
-               <div class="js-top-menu mobile" id="_mobile_top_menu"></div>
-               <div class="js-top-menu-bottom">
-                  <div id="_mobile_contact_link"></div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="header-piz-line no-padding">
-         <div class="col-big">
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
             <div class="row">
-               <div id="dor-verticalmenu" class="block block-info nopadding">
-                  <div class="dor-vertical-title">
-                     <div class="vertical-menu-head">
-                        <div class="vertical-menu-head-inner">
-                           <div class="vertical-menu-head-wrapper">
-                              <div class="fa-icon-menu"><i class="material-icons"></i></div>
-                              <h3 class="dor_title_block"><span>Shop by Category</span></h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="dor-verticalmenu block_content" style="display: none;">
-                     <div class="navbar navbar-default">
-                        <div class="controll-vertical-mobile clearfix hidden">
-                           <div class="navbar-header vertical-menu-header hidden">
-                              <button type="button" class="navbar-toggle open_menu">
-                              <i class="material-icons"></i>
-                              </button>
-                           </div>
-                           <div class="close_menu_vertical" style="display:none;">
-                              <span class="btn-close"><i class="material-icons"></i></span>
-                           </div>
-                           <div class="mobile-logo-menu hidden-lg hidden-md">
-                              <a href="http://bionic.doradothemes.com/store7/" title="Bionic Store">
-                              <img class="logo img-responsive" src="http://bionic.doradothemes.com/store7/modules/dor_imageslider/images/logo-menu.png" alt="Bionic Store">
-                              </a>
-                           </div>
-                        </div>
-                        <div class="verticalmenu" role="navigation">
-                           <div class="navbar-header">
-                              <div class="navbar-collapse navbar-ex1-collapse">
-                                 <!-- <ul class="nav navbar-nav verticalmenu">
-                                    <li class="bold"><a target="_self" href="http://bionic.doradothemes.com/store7/en/#"><span class="menu-icon material-icon"><i class="material-icons">grade</i></span><span class="menu-title">Hot of the Day</span><span class="menu-label-hot"><span>hot</span></span></a></li>
-                                    <li class="parent dropdown aligned-left">
-                                       <a class="dropdown-toggle-" data-toggle="dropdown-" target="_self" href="http://bionic.doradothemes.com/store7/en/#"><span class="menu-icon material-icon"><i class="material-icons">computer</i></span><span class="menu-title">Computers &amp; Laptops</span></a><span class="expand dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></span>
-                                       <ul class="dropdown-menu level1 verticalmenu-content" role="menu" style="background-image:url(http://bionic.doradothemes.com/img/cms/dorado/menu/ver_bg_computer.png);background-repeat:no-repeat;width:750px;">
-                                          <li>
-                                             <div class="row">
-                                                <div class="col-sm-6">
-                                                   <div class="widget-content">
-                                                      <div class="widget-links block">
-                                                         <div class="widget-heading title_block">
-                                                            Computers
-                                                         </div>
-                                                         <div class="widget-inner block_content">
-                                                            <div id="tabs331263588" class="panel-group">
-                                                               <ul class="nav-links" data-id="myTab">
-                                                                  <li><a href="http://bionic.doradothemes.com/store2/en/3-shop">Mac Computer</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store2/en/3-shop">Windows Computer</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store2/en/3-shop">PC Computer</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store2/en/3-shop">All In One</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store2/en/3-shop">Desktops</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store2/en/3-shop">Microsof Surface</a></li>
-                                                               </ul>
+                <div class="col-lg-2 col-md-3 hidden-sm hidden-xs sidebar-megamenu">
+                    <div class="megamenu-content-sidebar">
+                        <div class="block-title btn-megamenu sm_megamenu_block-title"><a href="javascript:void(0)" title="">All department</a></div>
+                        <!-- <div class="menu-ver-content">
+                            <nav class="sm_megamenu_wrapper_vertical_menu sambar" id="sm_megamenu_menu5af58bd2e4087" data-sam="12834564881526041554">
+                                <div class="sambar-inner"><span class="btn-sambar" data-sapi="collapse" data-href="#sm_megamenu_menu5af58bd2e4087"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></span>
+                                    <div class="mega-content">
+                                        <ul class="vertical-type sm-megamenu-hover sm_megamenu_menu sm_megamenu_menu_black" data-jsapi="on">
+                                            <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent   parent-item">
+                                                <a class="sm_megamenu_head sm_megamenu_drop sm_megamenu_haschild" href="http://magento2.flytheme.net/themes/sm_emarket/german/furniture.html" id="sm_megamenu_276"> <span class="icon_items"><img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/icon/4.png" alt="icon items"></span> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Textiles &amp; Accessories</span> </span>
+                                                </a>
+                                                <div class="sm-megamenu-child sm_megamenu_dropdown_3columns ">
+                                                    <div data-link="http://magento2.flytheme.net/themes/sm_emarket/german/" class="sm_megamenu_col_3 sm_megamenu_firstcolumn    ">
+                                                        <div data-link="" class="sm_megamenu_col_3    remove-padding">
+                                                            <div class="sm_megamenu_head_item">
+                                                                <div class="sm_megamenu_title  ">
+                                                                    <div data-link="http://magento2.flytheme.net/themes/sm_emarket/german/" class="sm_megamenu_col_6 sm_megamenu_firstcolumn    ">
+                                                                        <div class="sm_megamenu_head_item">
+                                                                            <div class="sm_megamenu_title  ">
+                                                                                <a class="sm_megamenu_nodrop " href="http://magento2.flytheme.net/themes/sm_emarket/german/sport-entertaiment/swim-gear.html"></a>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/sport-entertaiment/swim-gear/women-s-swimwear.html"><span class="sm_megamenu_title_lv-3">Women's Swimwear</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/sport-entertaiment/swim-gear/men-s-swimwear.html"><span class="sm_megamenu_title_lv-3">Men's Swimwear</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/sport-entertaiment/swim-gear/kid-s-swimwear.html"><span class="sm_megamenu_title_lv-3">Kid's Swimwear</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/sport-entertaiment/swim-gear/swim-accessories.html"><span class="sm_megamenu_title_lv-3">Swim Accessories</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/sport-entertaiment/swim-gear/umbrella-raincoat.html"><span class="sm_megamenu_title_lv-3">Umbrella &amp; Raincoat</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/sport-entertaiment/swim-gear/other-outdoor-gear.html"><span class="sm_megamenu_title_lv-3">Other Outdoor Gear</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/sport-entertaiment/swim-gear/camping-lights.html"><span class="sm_megamenu_title_lv-3">Camping Lights</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/sport-entertaiment/swim-gear/bicycle-lights.html"><span class="sm_megamenu_title_lv-3">Bicycle Lights</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/sport-entertaiment/swim-gear/shoes.html"><span class="sm_megamenu_title_lv-3">Shoes</span></a></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                   <div class="widget-content">
-                                                      <div class="widget-links block">
-                                                         <div class="widget-heading title_block">
-                                                            Laptops &amp; Notebook
-                                                         </div>
-                                                         <div class="widget-inner block_content">
-                                                            <div id="tabs2008493118" class="panel-group">
-                                                               <ul class="nav-links" data-id="myTab">
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Apple Mackbook</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Microsoft Surfacebook</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Lenovo Thinkpad</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Samsung Laptops</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Xiaomi Notebook</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Chromebooks</a></li>
-                                                               </ul>
+                                                        </div>
+                                                        <div data-link="" class="sm_megamenu_col_3 sm_megamenu_firstcolumn    remove-padding">
+                                                            <div class="sm_megamenu_head_item">
+                                                                <div class="sm_megamenu_title  ">
+                                                                    <div class="sm_megamenu_content">
+                                                                        <div class="right-image-menu static-image">
+                                                                            <a title="Static Image" href="#">
+                                                                                <img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/mega-banner.png" alt="Static Image">
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </li>
-                                       </ul>
-                                    </li>
-                                    <li class="parent dropdown aligned-left">
-                                       <a class="dropdown-toggle-" data-toggle="dropdown-" target="_self" href="http://bionic.doradothemes.com/store7/en/#"><span class="menu-icon material-icon"><i class="material-icons">photo_camera</i></span><span class="menu-title">Cameras &amp; Photo</span></a><span class="expand dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></span>
-                                       <ul class="dropdown-menu level1 verticalmenu-content" role="menu" style="background-image:url(http://bionic.doradothemes.com/img/cms/dorado/menu/ver_bg_camera.png);background-repeat:no-repeat;width:750px;">
-                                          <li>
-                                             <div class="row">
-                                                <div class="col-sm-6">
-                                                   <div class="widget-content">
-                                                      <div class="widget-links block">
-                                                         <div class="widget-heading title_block">
-                                                            Cameras &amp; Photography
-                                                         </div>
-                                                         <div class="widget-inner block_content">
-                                                            <div id="tabs1082159954" class="panel-group">
-                                                               <ul class="nav-links" data-id="myTab">
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">All Cameras &amp; Photography</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Digital SLRs</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Point &amp; Shoot Cameras</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Lenses</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Camera Accessories</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Security &amp; Surveillance</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Binoculars &amp; Telescopes</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Camcorders</a></li>
-                                                               </ul>
+                                                        </div>
+                                                    </div>
+                                                </div><span class="btn-submobile"></span> </li>
+                                            <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  ">
+                                                <a class="sm_megamenu_head sm_megamenu_drop " href="http://magento2.flytheme.net/themes/sm_emarket/german/food.html" id="sm_megamenu_231"> <span class="icon_items"><img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/icon/5.png" alt="icon items"></span> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Packaging &amp; Office</span> </span>
+                                                </a>
+                                            </li>
+                                            <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent   parent-item">
+                                                <a class="sm_megamenu_head sm_megamenu_drop sm_megamenu_haschild" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage.html" id="sm_megamenu_268"> <span class="icon_items"><img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/icon/6.png" alt="icon items"></span> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Metallurgy, Chemicals</span> </span>
+                                                </a>
+                                                <div class="sm-megamenu-child sm_megamenu_dropdown_5columns ">
+                                                    <div data-link="http://magento2.flytheme.net/themes/sm_emarket/german/" class="sm_megamenu_col_5 sm_megamenu_firstcolumn    ">
+                                                        <div data-link="" class="sm_megamenu_col_6 sm_megamenu_firstcolumn    remove-padding ">
+                                                            <div class="sm_megamenu_head_item">
+                                                                <div class="sm_megamenu_title  ">
+                                                                    <div data-link="" class="sm_megamenu_col_6    remove-padding">
+                                                                        <div class="sm_megamenu_head_item">
+                                                                            <div class="sm_megamenu_title  ">
+                                                                                <div data-link="http://magento2.flytheme.net/themes/sm_emarket/german/" class="sm_megamenu_col_2    margin-bottom">
+                                                                                    <div class="sm_megamenu_head_item">
+                                                                                        <div class="sm_megamenu_title  ">
+                                                                                            <a class="sm_megamenu_nodrop " href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/men-fashion.html"></a>
+                                                                                            <div class="sm_megamenu_title">
+                                                                                                <h3 class="sm_megamenu_nodrop  title-cat">Men Fashion</h3></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/men-fashion/hammock.html"><span class="sm_megamenu_title_lv-4">Hammock</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/men-fashion/telescope.html"><span class="sm_megamenu_title_lv-4">Telescope</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/men-fashion/hat.html"><span class="sm_megamenu_title_lv-4">Hat</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/men-fashion/tent.html"><span class="sm_megamenu_title_lv-4">Tent</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/men-fashion/sleeping-bag.html"><span class="sm_megamenu_title_lv-4">Sleeping Bag</span></a></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div data-link="http://magento2.flytheme.net/themes/sm_emarket/german/" class="sm_megamenu_col_2    ">
+                                                                                    <div class="sm_megamenu_head_item">
+                                                                                        <div class="sm_megamenu_title  ">
+                                                                                            <a class="sm_megamenu_nodrop " href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/women-fashion.html"></a>
+                                                                                            <div class="sm_megamenu_title">
+                                                                                                <h3 class="sm_megamenu_nodrop  title-cat">Women Fashion</h3></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/women-fashion/women-s-swimwear.html"><span class="sm_megamenu_title_lv-4">Women's Swimwear</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/women-fashion/men-s-swimwear.html"><span class="sm_megamenu_title_lv-4">Men's Swimwear</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/women-fashion/kid-s-swimwear.html"><span class="sm_megamenu_title_lv-4">Kid's Swimwear</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/women-fashion/swim-accessories.html"><span class="sm_megamenu_title_lv-4">Swim Accessories</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/women-fashion/umbrella-raincoat.html"><span class="sm_megamenu_title_lv-4">Umbrella &amp; Raincoat</span></a></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div data-link="http://magento2.flytheme.net/themes/sm_emarket/german/" class="sm_megamenu_col_2    ">
+                                                                                    <div class="sm_megamenu_head_item">
+                                                                                        <div class="sm_megamenu_title  ">
+                                                                                            <a class="sm_megamenu_nodrop " href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/handbags.html"></a>
+                                                                                            <div class="sm_megamenu_title">
+                                                                                                <h3 class="sm_megamenu_nodrop  title-cat">Handbags</h3></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/handbags/other-outdoor-gear.html"><span class="sm_megamenu_title_lv-4">Other Outdoor Gear</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/handbags/cycling-protective-gears.html"><span class="sm_megamenu_title_lv-4">Cycling Protective Gears</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/handbags/cycling-accessories.html"><span class="sm_megamenu_title_lv-4">Cycling Accessories</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/handbags/cycling-clothing.html"><span class="sm_megamenu_title_lv-4">Cycling Clothing</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/handbags/bicycles-frames.html"><span class="sm_megamenu_title_lv-4">Bicycles Frames</span></a></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div data-link="" class="sm_megamenu_col_6 sm_megamenu_firstcolumn    remove-padding">
+                                                                        <div class="sm_megamenu_head_item">
+                                                                            <div class="sm_megamenu_title  ">
+                                                                                <div data-link="http://magento2.flytheme.net/themes/sm_emarket/german/" class="sm_megamenu_col_2    ">
+                                                                                    <div class="sm_megamenu_head_item">
+                                                                                        <div class="sm_megamenu_title  ">
+                                                                                            <a class="sm_megamenu_nodrop " href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/bag.html"></a>
+                                                                                            <div class="sm_megamenu_title">
+                                                                                                <h3 class="sm_megamenu_nodrop  title-cat">Bag</h3></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/bag/bicycle-lights.html"><span class="sm_megamenu_title_lv-4">Bicycle Lights</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/bag/elementum.html"><span class="sm_megamenu_title_lv-4">Elementum</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/bag/tincidunt.html"><span class="sm_megamenu_title_lv-4">Tincidunt</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/bag/faucibus.html"><span class="sm_megamenu_title_lv-4">Faucibus</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/bag/sollicitudin.html"><span class="sm_megamenu_title_lv-4">Sollicitudin</span></a></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div data-link="http://magento2.flytheme.net/themes/sm_emarket/german/" class="sm_megamenu_col_2    ">
+                                                                                    <div class="sm_megamenu_head_item">
+                                                                                        <div class="sm_megamenu_title  ">
+                                                                                            <a class="sm_megamenu_nodrop " href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/jean.html"></a>
+                                                                                            <div class="sm_megamenu_title">
+                                                                                                <h3 class="sm_megamenu_nodrop  title-cat">Jean</h3></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/jean/camping-lights.html"><span class="sm_megamenu_title_lv-4">Camping Lights</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/jean/bicycle-lights.html"><span class="sm_megamenu_title_lv-4">Bicycle Lights</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/jean/vehicula.html"><span class="sm_megamenu_title_lv-4">Vehicula</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/jean/commodo.html"><span class="sm_megamenu_title_lv-4">Commodo</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/jean/rutrumn.html"><span class="sm_megamenu_title_lv-4">Rutrumn</span></a></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div data-link="http://magento2.flytheme.net/themes/sm_emarket/german/" class="sm_megamenu_col_2    ">
+                                                                                    <div class="sm_megamenu_head_item">
+                                                                                        <div class="sm_megamenu_title  ">
+                                                                                            <a class="sm_megamenu_nodrop " href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/t-shirt.html"></a>
+                                                                                            <div class="sm_megamenu_title">
+                                                                                                <h3 class="sm_megamenu_nodrop  title-cat">T-shirt</h3></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/t-shirt/fermentuma.html"><span class="sm_megamenu_title_lv-4">Fermentuma</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/t-shirt/commodos.html"><span class="sm_megamenu_title_lv-4">Commodos</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/t-shirt/shoes.html"><span class="sm_megamenu_title_lv-4">Shoes</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/t-shirt/western-wear.html"><span class="sm_megamenu_title_lv-4">Western Wear</span></a></div>
+                                                                                            <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/fashion/t-shirt/trending.html"><span class="sm_megamenu_title_lv-4">Trending</span></a></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                   <div class="widget-content">
-                                                      <div class="widget-links block">
-                                                         <div class="widget-heading title_block">
-                                                            The Best Cameras
-                                                         </div>
-                                                         <div class="widget-inner block_content">
-                                                            <div id="tabs796536553" class="panel-group">
-                                                               <ul class="nav-links" data-id="myTab">
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Nikon D850</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Fujifilm X-T2</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Sony Alpha A9</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Olympus OM-D E-M10 Mark II</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Panasonic Lumix ZS100</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Canon EOS Rebel T7i</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">GoPro Hero5 Black</a></li>
-                                                               </ul>
+                                                        </div>
+                                                    </div>
+                                                </div><span class="btn-submobile"></span> </li>
+                                            <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  ">
+                                                <a class="sm_megamenu_head sm_megamenu_drop " href="http://magento2.flytheme.net/themes/sm_emarket/german/sport-entertaiment.html" id="sm_megamenu_271"> <span class="icon_items"><img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/icon/6.png" alt="icon items"></span> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Sport &amp; Entertaiment</span> </span>
+                                                </a>
+                                            </li>
+                                            <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  ">
+                                                <a class="sm_megamenu_head sm_megamenu_drop " href="http://magento2.flytheme.net/themes/sm_emarket/german/food.html" id="sm_megamenu_273"> <span class="icon_items"><img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/icon/7.png" alt="icon items"></span> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Jewelry &amp; Watches</span> </span>
+                                                </a>
+                                            </li>
+                                            <li class="background_moto-parent other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent   parent-item">
+                                                <a class="sm_megamenu_head sm_megamenu_drop sm_megamenu_haschild" href="http://magento2.flytheme.net/themes/sm_emarket/german/sport-entertaiment.html" id="sm_megamenu_275"> <span class="icon_items"><img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/icon/6.png" alt="icon items"></span> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Automotive</span> </span>
+                                                </a>
+                                                <div class="sm-megamenu-child sm_megamenu_dropdown_5columns ">
+                                                    <div data-link="http://magento2.flytheme.net/themes/sm_emarket/german/" class="sm_megamenu_col_5 sm_megamenu_firstcolumn    background_moto">
+                                                        <div data-link="" class="sm_megamenu_col_2    ">
+                                                            <div class="sm_megamenu_head_item">
+                                                                <div class="sm_megamenu_title  ">
+                                                                    <div data-link="http://magento2.flytheme.net/themes/sm_emarket/german/" class="sm_megamenu_col_6 sm_megamenu_firstcolumn    margin-bottom">
+                                                                        <div class="sm_megamenu_head_item">
+                                                                            <div class="sm_megamenu_title  ">
+                                                                                <a class="sm_megamenu_nodrop " href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/car-accessories.html"></a>
+                                                                                <div class="sm_megamenu_title">
+                                                                                    <h3 class="sm_megamenu_nodrop  title-cat">Car Accessories</h3></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/car-accessories/car-electronics.html"><span class="sm_megamenu_title_lv-3">Car Electronics</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/car-accessories/car-lighting.html"><span class="sm_megamenu_title_lv-3">Car Lighting</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/car-accessories/car-chargers-adapters.html"><span class="sm_megamenu_title_lv-3">Car Chargers &amp; Adapters</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/car-accessories/car-decorations.html"><span class="sm_megamenu_title_lv-3">Car Decorations</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/car-accessories/car-thermometers.html"><span class="sm_megamenu_title_lv-3">Car Thermometers</span></a></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div data-link="http://magento2.flytheme.net/themes/sm_emarket/german/" class="sm_megamenu_col_6 sm_megamenu_firstcolumn    ">
+                                                                        <div class="sm_megamenu_head_item">
+                                                                            <div class="sm_megamenu_title  ">
+                                                                                <a class="sm_megamenu_nodrop " href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/car-lights.html"></a>
+                                                                                <div class="sm_megamenu_title">
+                                                                                    <h3 class="sm_megamenu_nodrop  title-cat">Car Lights</h3></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/car-lights/car-dvrs.html"><span class="sm_megamenu_title_lv-3">Car DVRs</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/car-lights/car-led-light-bulbs.html"><span class="sm_megamenu_title_lv-3">Car LED Light Bulbs</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/car-lights/hid-xenon-kits.html"><span class="sm_megamenu_title_lv-3">HID Xenon Kits</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/car-lights/car-decoration-lights.html"><span class="sm_megamenu_title_lv-3">Car Decoration Lights</span></a></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </li>
-                                       </ul>
-                                    </li>
-                                    <li class="parent dropdown aligned-left">
-                                       <a class="dropdown-toggle-" data-toggle="dropdown-" target="_self" href="http://bionic.doradothemes.com/store7/en/#"><span class="menu-icon material-icon"><i class="material-icons">smartphone</i></span><span class="menu-title">Smart Phones &amp; Tablets </span></a><span class="expand dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></span>
-                                       <ul class="dropdown-menu level1 verticalmenu-content" role="menu" style="background-image:url(http://bionic.doradothemes.com/img/cms/dorado/menu/ver_bg_smartphone.png);background-repeat:no-repeat;width:650px;">
-                                          <li>
-                                             <div class="row">
-                                                <div class="col-sm-6">
-                                                   <div class="widget-content">
-                                                      <div class="widget-links block">
-                                                         <div class="widget-heading title_block">
-                                                            Mobiles &amp; Tablets
-                                                         </div>
-                                                         <div class="widget-inner block_content">
-                                                            <div id="tabs110369741" class="panel-group">
-                                                               <ul class="nav-links" data-id="myTab">
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">All Mobile Phones</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Smartphones</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">IOS Mobiles</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Android Mobiles</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Windows Mobiles</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Refurbished Mobiles</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Mobile Accessories</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Cases &amp; Covers</a></li>
-                                                               </ul>
+                                                        </div>
+                                                        <div data-link="" class="sm_megamenu_col_2    ">
+                                                            <div class="sm_megamenu_head_item">
+                                                                <div class="sm_megamenu_title  ">
+                                                                    <div data-link="http://magento2.flytheme.net/themes/sm_emarket/german/" class="sm_megamenu_col_6 sm_megamenu_firstcolumn    margin-bottom">
+                                                                        <div class="sm_megamenu_head_item">
+                                                                            <div class="sm_megamenu_title  ">
+                                                                                <a class="sm_megamenu_nodrop " href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/motorcycle.html"></a>
+                                                                                <div class="sm_megamenu_title">
+                                                                                    <h3 class="sm_megamenu_nodrop  title-cat">Motorcycle</h3></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/motorcycle/diagnostic-tools.html"><span class="sm_megamenu_title_lv-3">Diagnostic Tools</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/motorcycle/motorcycle-fairings.html"><span class="sm_megamenu_title_lv-3">Motorcycle Fairings</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/motorcycle/car-gps-accessories.html"><span class="sm_megamenu_title_lv-3">Car GPS &amp; Accessories</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/motorcycle/car-decals-stickers.html"><span class="sm_megamenu_title_lv-3">Car Decals &amp; Stickers</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/motorcycle/car-parts-exterior-accessories.html"><span class="sm_megamenu_title_lv-3">Car Parts &amp; Exterior Accessories</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/motorcycle/motorcycle-helmets.html"><span class="sm_megamenu_title_lv-3">Motorcycle Helmets</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/motorcycle/motorcyle-lighting.html"><span class="sm_megamenu_title_lv-3">Motorcyle Lighting</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/motorcycle/motorcycle-accessories.html"><span class="sm_megamenu_title_lv-3">Motorcycle Accessories</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/motorcycle/car-interior-accessories.html"><span class="sm_megamenu_title_lv-3">Car Interior Accessories</span></a></div>
+                                                                                <div class="sm_megamenu_title "><a class="sm_megamenu_nodrop" href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage/motorcycle/motorcycle-gear.html"><span class="sm_megamenu_title_lv-3">Motorcycle Gear</span></a></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                   <div class="widget-content menu-none-title">
-                                                      <div class="widget-links block">
-                                                         <div class="widget-inner block_content">
-                                                            <div id="tabs386639592" class="panel-group">
-                                                               <ul class="nav-links" data-id="myTab">
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">All Tablets</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Tablet Accessories</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Landline Phones</a></li>
-                                                                  <li><a href="http://bionic.doradothemes.com/store7/en/#">Wearable Devices</a></li>
-                                                               </ul>
+                                                        </div>
+                                                        <div data-link="" class="sm_megamenu_col_2 sm_megamenu_firstcolumn    ">
+                                                            <div class="sm_megamenu_head_item">
+                                                                <div class="sm_megamenu_title  ">
+                                                                    <div class="sm_megamenu_content"><img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/moto_bg.png" alt=""></div>
+                                                                </div>
                                                             </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </li>
-                                       </ul>
-                                    </li>
-                                    <li class=""><a target="_self" href="http://bionic.doradothemes.com/store7/en/#"><span class="menu-icon material-icon"><i class="material-icons">tv</i></span><span class="menu-title">TV &amp; Audio</span></a></li>
-                                    <li class=""><a target="_self" href="http://bionic.doradothemes.com/store7/en/#"><span class="menu-icon material-icon"><i class="material-icons">all_out</i></span><span class="menu-title">Games &amp; Consoles</span></a></li>
-                                    <li class=""><a target="_self" href="http://bionic.doradothemes.com/store7/en/#"><span class="menu-icon material-icon"><i class="material-icons">watch</i></span><span class="menu-title">Smart Watch &amp; Wearables</span></a></li>
-                                    <li class=""><a target="_self" href="http://bionic.doradothemes.com/store7/en/#"><span class="menu-icon material-icon"><i class="material-icons">directions_car</i></span><span class="menu-title">Car Electronic &amp; Auto</span></a></li>
-                                    <li class="hidden"><a target="_self" href="http://bionic.doradothemes.com/store7/en/#"><span class="menu-icon material-icon"><i class="material-icons">device_hub</i></span><span class="menu-title">Accesories</span></a></li>
-                                    <li class="hidden"><a target="_self" href="http://bionic.doradothemes.com/store7/en/#"><span class="menu-icon material-icon"><i class="material-icons">wb_sunny</i></span><span class="menu-title">Gadgets</span></a></li>
-                                    <li class="hidden"><a target="_self" href="http://bionic.doradothemes.com/store7/en/#"><span class="menu-icon material-icon"><i class="material-icons">3d_rotation</i></span><span class="menu-title">Virtual Reality</span></a></li>
-                                 </ul> -->
-                                 <div class="show-more-ver-menu">
-                                    <a href="http://bionic.doradothemes.com/store7/en/#"><span class="show-more">More Categories</span><span class="hidden hide-more">Hide Categories</span></a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- pos search module TOP -->
-               <div id="dor_search_top" class="center_column col-lg-4 col-md-4 col-xs-12 col-sm-12 clearfix">
+                                                        </div>
+                                                    </div>
+                                                </div><span class="btn-submobile"></span> </li>
+                                            <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  ">
+                                                <a class="sm_megamenu_head sm_megamenu_drop " href="http://magento2.flytheme.net/themes/sm_emarket/german/travel-vacation.html" id="sm_megamenu_277"> <span class="icon_items"><img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/icon/9.png" alt="icon items"></span> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Components &amp; Telecom</span> </span>
+                                                </a>
+                                            </li>
+                                            <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  ">
+                                                <a class="sm_megamenu_head sm_megamenu_drop " href="http://magento2.flytheme.net/themes/sm_emarket/german/sport-entertaiment.html" id="sm_megamenu_269"> <span class="icon_items"><img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/icon/7.png" alt="icon items"></span> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Optimum Electronics</span> </span>
+                                                </a>
+                                            </li>
+                                            <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  ">
+                                                <a class="sm_megamenu_head sm_megamenu_drop " href="http://magento2.flytheme.net/themes/sm_emarket/german/travel-vacation.html" id="sm_megamenu_272"> <span class="icon_items"><img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/icon/8.png" alt="icon items"></span> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Home &amp; Construction</span> </span>
+                                                </a>
+                                            </li>
+                                            <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  ">
+                                                <a class="sm_megamenu_head sm_megamenu_drop " href="http://magento2.flytheme.net/themes/sm_emarket/german/spa-massage.html" id="sm_megamenu_270"> <span class="icon_items"><img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/icon/10.png" alt="icon items"></span> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Jewelry, Bags &amp; Shoes</span> </span>
+                                                </a>
+                                            </li>
+                                            <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  " style="display: none;">
+                                                <a class="sm_megamenu_head sm_megamenu_drop " href="http://magento2.flytheme.net/themes/sm_emarket/german/furniture.html" id="sm_megamenu_279"> <span class="icon_items"><img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/icon/7.png" alt="icon items"></span> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Book Stationery</span> </span>
+                                                </a>
+                                            </li>
+                                            <li class="other-toggle  sm_megamenu_lv1 sm_megamenu_drop parent  " style="display: none;">
+                                                <a class="sm_megamenu_head sm_megamenu_drop " href="http://magento2.flytheme.net/themes/sm_emarket/german/food.html" id="sm_megamenu_281"> <span class="icon_items"><img src="http://magento2.flytheme.net/themes/sm_emarket/pub/media/wysiwyg/mega-menu/icon/10.png" alt="icon items"></span> <span class="sm_megamenu_icon sm_megamenu_nodesc"> <span class="sm_megamenu_title">Foot &amp; Restaurant</span> </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="more-w"><span class="more-view">More Categories</span></div>
+                                </div>
+                            </nav>
+                            <script type="text/javascript">
+                                require(["jquery", "mage/template"], function($) {
+                                    var menu_width = $('.sm_megamenu_wrapper_horizontal_menu').width();
+                                    $('.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu > li > div').each(function() {
+                                        $this = $(this);
+                                        var lv2w = $this.width();
+                                        var lv2ps = $this.position();
+                                        var lv2psl = $this.position().left;
+                                        var sw = lv2w + lv2psl;
+                                        if (sw > menu_width) {
+                                            $this.css({
+                                                'right': '0'
+                                            });
+                                        }
+                                    });
+                                    var _item_active = $('div.sm_megamenu_actived');
+                                    if (_item_active.length) {
+                                        _item_active.each(function() {
+                                            var _self = $(this),
+                                                _parent_active = _self.parents('.sm_megamenu_title'),
+                                                _level1 = _self.parents('.sm_megamenu_lv1');
+                                            if (_parent_active.length) {
+                                                _parent_active.each(function() {
+                                                    if (!$(this).hasClass('sm_megamenu_actived'))
+                                                        $(this).addClass('sm_megamenu_actived');
+                                                });
+                                            }
 
-                <%= form_tag spree.products_path, method: :get, id:"searchbox", class:"form-inline" do %>
-                  <div class=" dor_search form-group">
-                    <%= search_field_tag :keywords, params[:keywords], placeholder: Spree.t(:search), class: " search_query form-control", id:"dor_query_top" %>
-                  </div>
-                  <button type="submit" name="submit_search" class="btn btn-default"><i class="pe-7s-search"></i></button>
-                <% end %>
+                                            if (_level1.length && !_level1.hasClass('sm_megamenu_actived')) {
+                                                _level1.addClass('sm_megamenu_actived');
+                                            }
+                                        });
+                                    }
 
-                  
-               </div>
-               <!-- /pos search module TOP -->
-               <div class="button-head-total">
-                  <div class="header-total-feat">
-                     <a href="#" class="total-wishlist"><span class="get-info-total"><span><i class="pe-7s-like"></i></span><strong>0</strong><span class="txt-button-head">Wishlist</span></span></a>
-                     <a href="#" class="total-compare"><span class="get-info-total"><span><i class="pe-7s-shuffle"></i></span><strong>0</strong><span class="txt-button-head">Compare</span></span></a>
-                  </div>
-               </div>
-               <div class="nav-cart">
+                                });
+                            </script>
+                        </div> -->
+                    </div>
+                    <!-- <script type="text/javascript">
+                        require([
+                            'jquery'
+                        ], function($) {
+                            var limit;
+                            limit = 10;
 
-                                 <div id="_desktop_cart">
-                                    <div class="blockcart cart-preview" data-refresh-url="#">
-                                       <div class="header">
+                            var i;
+                            i = 0;
+                            var items;
+                            items = $('.sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu > li').length;
+
+                            if (items > limit) {
+                                $('.sm_megamenu_wrapper_vertical_menu .sambar-inner').append('<div class="more-w"><span class="more-view">More Categories</span></div>');
+
+                                $('.sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu > li').each(function() {
+                                    i++;
+                                    if (i > limit) {
+                                        $(this).css('display', 'none');
+                                    }
+                                });
+
+                                $('.sm_megamenu_wrapper_vertical_menu .sambar-inner .more-w > .more-view').click(function() {
+                                    if ($(this).hasClass('open')) {
+                                        i = 0;
+                                        $('.sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu > li').each(function() {
+                                            i++;
+                                            if (i > limit) {
+                                                $(this).slideUp(200);
+                                            }
+                                        });
+                                        $(this).removeClass('open');
+                                        $('.more-w').removeClass('active-i');
+                                        $(this).text('More Categories');
+                                    } else {
+                                        i = 0;
+                                        $('.sm_megamenu_wrapper_vertical_menu ul.sm_megamenu_menu > li').each(function() {
+                                            i++;
+                                            if (i > limit) {
+                                                $(this).slideDown(200);
+                                            }
+                                        });
+                                        $(this).addClass('open');
+                                        $('.more-w').addClass('active-i');
+                                        $(this).text('Close Menu');
+                                    }
+                                });
+
+                            }
+
+                        });
+                    </script> -->
+                </div>
+                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-8 searchbox-header">
+                    <div class="search-wrapper">
+                        <div id="sm_searchbox5759313431526041556" class="sm-searchbox">
+                            <div class="sm-searchbox-content">
+                                <%= form_tag spree.products_path, method: :get, class:"form minisearch", id:"searchbox_mini_form" do %>
+                                  <div class="field searchbox">
+                                    <div class="control">
+                                    <%= search_field_tag :keywords, params[:keywords], placeholder: Spree.t(:search), class:"input-text input-searchbox" , id:"dor_query_top" %>
+                                  </div>
+                                  </div>
+                                  <div class="actions">
+                                        <button type="submit" title="Search" class="btn-searchbox"><span>Search</span></button>
+                                    </div>
+                                <% end %>
+                                <!-- <form class="form minisearch" id="searchbox_mini_form" action="http://magento2.flytheme.net/themes/sm_emarket/german/catalogsearch/result/" method="get">
+                                    <div class="field searchbox">
+                                        <div class="control">
+                                            <input id="searchbox" type="text" name="q" onfocus="if(this.value=='Enter your search...') this.value='';" onblur="if(this.value=='') this.value='Enter your search...';" value="Enter your search..." class="input-text input-searchbox" maxlength="128" role="combobox" aria-haspopup="false" aria-autocomplete="both" autocomplete="off">
+                                            <div id="searchbox_autocomplete" class="search-autocomplete"></div>
+                                        </div>
+                                    </div>
+                                    <div class="actions">
+                                        <button type="submit" title="Search" class="btn-searchbox" disabled=""><span>Search</span></button>
+                                    </div>
+                                </form> -->
+                            </div>
+                        </div>
+                        <!-- <script type="text/javascript">
+                            require([
+                                'jquery'
+                            ], function($) {
+                                var searchbox = $('#sm_searchbox5759313431526041556');
+                                var firt_load = 5;
+
+                                clickMore($('.sm-searchbox-more', searchbox));
+
+                                function clickMore(more) {
+                                    more.click(function() {
+                                        var that = $(this);
+                                        var sb_ajaxurl = that.attr('data-ajaxmore');
+                                        var count = that.attr('data-count');
+                                        count = parseInt(count);
+                                        if (firt_load >= count) {
+                                            count = count + parseInt(firt_load);
+                                        }
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: sb_ajaxurl,
+                                            data: {
+                                                is_ajax: 1,
+                                                count_term: count
+                                            },
+                                            success: function(data) {
+                                                $('.sm-searchbox-keyword', searchbox).html(data.htm);
+                                                clickMore($('a.sm-searchbox-more', searchbox));
+                                                $('a.sm-searchbox-more', searchbox).attr({
+                                                    'data-count': count + parseInt(firt_load)
+                                                });
+                                            },
+                                            dataType: 'json'
+                                        });
+                                    });
+                                }
+
+                            });
+                        </script> -->
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-4 inner-right-bottom">
+                    <div class="minicart-header">
+                        <div class="minicart-content">
+                            <div class="cart-wrapper">
+                                <div data-block="minicart" class="minicart-wrapper">
+                                    <div class="header">
                                           <ul class="nav navbar-nav navbar-right" data-hook>
                                           <li id="link-to-cart" data-hook>
                                             <noscript>
@@ -436,12 +567,20 @@
                                           <script>Spree.fetch_cart()</script>
                                         </ul>
                                     </div>
-                                 </div>
-                                 <div class="pull-xs-right" id="_mobile_cart"></div>
-                              </div>
-                           </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- WISHLIST -->
+                    <!-- COMPARE -->
+                    <div class=" sn hidden-xs hidden-sm header-wishlist">
+                        <a class="fa fa-heart" href="#"></a>
+                    </div>
+                    <div class=" sn hidden-xs hidden-sm header-compare">
+                        <a class="fa fa-refresh" href="#"></a>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-   </div>
-</header>
+        </div>
+    </div>
+</div>

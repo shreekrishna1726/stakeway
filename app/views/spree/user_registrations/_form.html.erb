@@ -7,6 +7,13 @@
           <span class="login100-form-title">
             New Member Registration
           </span>
+          <div class="wrap-input100">
+            <%= f.text_field :phone_number, class: 'form-control input100', tabindex: 1 %>
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+          </div>
 
           <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
             <%= f.email_field :email, class: 'form-control input100', tabindex: 1, placeholder: Spree.t(:email) %>
