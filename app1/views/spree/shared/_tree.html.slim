@@ -1,8 +1,0 @@
-
-  li
-    a href="#"  data-toggle="tooltip" title="#{profile.try(:full_name)}-#{profile.try(:id)}"  
-    	= profile.try(:full_name)
-    -if !profile.children.blank?
-    ul
-      - profile.children.each do |sub_child|
-          = render partial: 'spree/shared/tree', locals: {profile: sub_child}

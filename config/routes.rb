@@ -13,12 +13,17 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-   Spree::Core::Engine.routes.draw do
+  Spree::Core::Engine.routes.draw do
 
     resources :contact_us
     get '/contact-us', to:'home#contact_us' 
-
+    get 'my-account', to: 'profiles#user_account'
+    get '/my-orders', to: 'users#my_orders'
     resources :charges
-    resources :profiles
+    resources :profiles do
+      collection do
+        
+      end 
+    end
   end
 end

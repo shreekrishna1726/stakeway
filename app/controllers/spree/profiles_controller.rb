@@ -1,7 +1,7 @@
 module Spree
 	class ProfilesController < Spree::BaseController
   before_action :authenticate_user!
-  before_action :premium_user!
+  before_action :premium_user!, except: [:user_account]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   # before_action :validate_profile, only: [:new]
   before_action :check_referral_user, only: :create
@@ -23,6 +23,10 @@ module Spree
 
 
   def edit
+  end
+
+  def user_account
+    
   end
 
   def create

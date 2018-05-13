@@ -1,0 +1,25 @@
+.container.orders
+		 #account
+				.container
+					.row
+							.well
+								-if @my_orders.blank?
+									.my-orders 
+										p No Order Found
+										=link_to "Continue shoping.", "/products"
+								-else
+									table.table.table-striped
+										thead
+											tr
+												th Order Number
+												th Order Status
+												th Action
+										tbody
+											-@my_orders.each do |order|
+												tr
+													td 
+														= order.number
+													td 
+														= order.state
+													td 
+														=link_to "View Order", "order_path(order.number)"

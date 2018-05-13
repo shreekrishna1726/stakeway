@@ -16,6 +16,7 @@
 !/tmp/.keep
 
 /node_modules
+/public/spree
 /yarn-error.log
 
 .byebug_history

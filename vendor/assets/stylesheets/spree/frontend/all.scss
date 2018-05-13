@@ -1,0 +1,264 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require spree/frontend
+
+ *= require_self
+ *= require_tree .
+*/
+
+a.cart-info.full {
+    color: #fff;
+}
+li.item.product.product-item {
+    min-height: 402px;
+}
+
+.input-group-btn {
+    position: sticky;
+    font-size: large !important;
+    white-space: nowrap;
+}
+.header-style-1 .header-middle {
+    padding: 10px 0 !important;
+}
+
+.layout-boxed .page-wrapper {
+    background-color: #fff;
+    /*max-width: 1140px !important;*/
+    margin: 0 auto;
+    box-shadow: 0 0 3px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+.dorHoverProduct2 .js-product-miniature .product-container .dor-display-product-info {
+    padding: 12px;
+    border: 1px solid #f5f5f5;
+    height: 255px;
+}
+.dor-header #dor_search_top form input#dor_query_top {
+    width: 89%;
+    float: left;
+    height: 47px;
+    font-size: 14px;
+}
+
+.btn-default {
+    color: #f6f6f6;
+    background: #52afc7 !important;
+    border: 0;
+    padding: 12px 24px;
+    margin: 0 !important;
+    font-size: 18px;
+    transition: all 0.5s;
+}
+
+div#team {
+    padding: 30px;
+    border: 1px solid #52afc7;
+}
+button#add-to-cart-button {
+    background: #101010 none repeat scroll 0 0;
+    border: 1px solid #101010;
+    border-radius: 35px;
+    font-size: 16px;
+    font-weight: 300;
+    height: auto;
+    padding: 8px 39px;
+    text-transform: none;
+}
+input#quantity {
+    border-left: 0 none;
+    border-right: 0 none;
+    height: 40px;
+    left: 22%;
+    text-align: center;
+    width: 56%;
+    box-shadow: none !important;
+}
+
+.label, label {
+    color: #414141;
+    text-align: right;
+    font-size: 1.2rem !important;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #52afc8 !important
+}
+.btn-success {
+    color: #fff;
+    background-color: #52afc9 !important;
+    border-color: #52afc9 !important;
+}
+.header-piz-line.no-padding {
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+
+// treeee--------
+
+.joining-details{
+  .tree ul {
+  padding-top: 20px; position: relative;
+  
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree li {
+  float: left; text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+  
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+  content: '';
+  position: absolute; top: 0; right: 50%;
+  border-top: 1px solid #ccc;
+  width: 50%; height: 20px;
+}
+.tree li::after{
+  right: auto; left: 50%;
+  border-left: 1px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+  display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+  border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+  border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+  content: '';
+  position: absolute; top: 0; left: 50%;
+  border-left: 1px solid #ccc;
+  width: 0; height: 20px;
+}
+
+.tree li a{
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #666;
+  font-family: arial, verdana, tahoma;
+  font-size: 11px;
+  display: inline-block;
+  
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover+ul li a {
+  background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+}
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after, 
+.tree li a:hover+ul li::before, 
+.tree li a:hover+ul::before, 
+.tree li a:hover+ul ul::before{
+  border-color:  #94a0b4;
+}
+
+}
+
+/**************************************************************
+                                                    Profile Page
+****************************************************************/
+.profile-card {
+    // background: #f0f0e9;
+    background: linear-gradient(to right, #cfdef3, #e0eafc);
+    padding: 20px 50px;
+    margin: 10px 0px;
+    min-height: 150px;
+    .uuid{
+        font-size: 16px;
+        color: #468dcb;
+    }
+    .secondary-options {
+        margin-top: 10px;
+        border-top: 2px solid #062c38;
+        text-align: center;
+        a{
+            margin-left: 10px;
+            color: #062c38;
+            padding: 10px;
+        }
+        }
+}
+
+.profile-show-page {
+    // background: #f0f0e9;
+    background: linear-gradient(to right, #cfdef3, #e0eafc);
+    padding: 50px;
+    margin: 10px;
+    p{
+        strong{
+            margin-right: 10px;
+            font-size: large;
+        }
+    }
+  }
+
+#account{
+  padding:10px;
+  .well {
+    min-height: 263px;
+    padding: 19px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #154053;
+    border: 1px solid #154053;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+
+    a{
+    color: #fff;
+    font-size: 24px;
+    }
+}
+}
