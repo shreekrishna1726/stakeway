@@ -4,34 +4,60 @@ module Spree
     before_action :set_api
 
     require 'Instamojo-rb'
+    require 'paypal-sdk-rest'
+    include PayPal::SDK::REST::DataTypes
+    include PayPal::SDK::Core::Logging
+    PayPal::SDK::REST.set_config(
+    :mode => "live", # "sandbox" or "live"
+    :client_id => "Aaewj1H855mxvvxqwD_0bHGGbPcLV4QfjRKCPgdameV929-Z7atuFTOv7bI1TeXx3OOszhFbApXBaDEx-UTcODg_kaTC0HnBQ0Zkm6kvQ1NZQwFYxWR2R_Bbis6VMy",
+    :client_secret => "EFBnNRCXZKobuKn9VEKpKdXAIGTWnoRlg6axJSGoiRvpWzNWLAAyq9c6gGig-dwQV52Rpj95PCixXbQb")
     
-    # @@api = Instamojo::API.new("e737b4ef3f19195217e591fc8ad3e057@instamojo.com", "0c12707dd9d2a2bda1a4fd7893e83a9e@instamojo.com")
-
+    # @@api = Instamojo::API.new("test_7a8227fcbc492750c81b5c7be5a", "test_0e624f8d7a4b979484533e38ded", "https://test.instamojo.com/api/1.1/")
+    # @@api = Instamojo::API.new("test_7a8227fcbc492750c81b5c7be5a", "test_0e624f8d7a4b979484533e38ded", "https://test.instamojo.com/api/1.1/")
     def new
-      p @api
-      p "-------------------------------------"
-      if current_spree_user.profile
-        redirect_to profile_path(current_spree_user.profile), notice: "You Are Already Register Our Channel:)"
+      @payment = Payment.new({
+        :intent =>  "sale",
+        :payer =>  {
+          :payment_method =>  "paypal" },
+        :redirect_urls => {
+          :return_url => "http://localhost:3000/charges/paymentDetail",
+          :cancel_url => "http://localhost:3000/" },
+        :transactions =>  [{
+          :amount =>  {
+            :total =>  "150",
+            :currency =>  "INR" },
+          :description =>  "This is the payment transaction description." }]})
+      
+      if @payment.create
+        p"create"
+        redirect_to @payment.links[1].href
       else
-        payment_request = @api.client.payment_request({buyer_name:"XYZ",phone: "9971907800", amount:100, purpose: 'Registration Fee', send_email: true, email: current_spree_user.email, redirect_url: 'http://localhost:3000/charges/paymentDetail/'})
-        redirect_to payment_request.longurl
+        p"error"
+        @payment.error 
       end
     end
 
 
     def paymentDetail
-      @status = @api.client.payment_detail(params[:payment_id])
-      p "-------------------------------"
-      p @status 
-      if @status.status == 'Credit'
-        current_spree_user.update_attributes(active: true)
-        if current_spree_user.profile.parent.present?
-          current_spree_user.profile.update_parent_referral_amount(current_spree_user.profile)
+        payment = Payment.find(params[:paymentId])
+        if payment.execute( :payer_id => params[:PayerID] )
+          current_spree_user.update_attributes(active: true)
+          redirect_to '/profiles/new'          
+        else
+          payment.error 
         end
-        redirect_to profile_path(current_spree_user.profile)
-      else
-        redirect_to '/'
-      end
+      # @status = @@api.client.payment_detail(params[:payment_id])
+      # # p "-------------------------------"
+      # p @status 
+      # if @status.status == 'Credit'
+      #   current_spree_user.update_attributes(active: true)
+      #   if current_spree_user.profile.parent.present?
+      #     current_spree_user.profile.update_parent_referral_amount(current_spree_user.profile)
+      #   end
+      #   redirect_to profile_path(current_spree_user.profile)
+      # else
+      #   redirect_to '/'
+      # end
     end
 
     def read_more
@@ -41,12 +67,15 @@ module Spree
     private
 
     def set_api
-      @api = Instamojo::API.new do |app|
-        p app 
-        p "--------------------"
-        app.api_key = "e737b4ef3f19195217e591fc8ad3e057@instamojo.com"
-        app.auth_token = "0c12707dd9d2a2bda1a4fd7893e83a9e@instamojo.com"
-      end
+      
+      # api = Instamojo::API.new("e737b4ef3f19195217e591fc8ad3e057", "0c12707dd9d2a2bda1a4fd7893e83a9e", "https://instamojo.com/api/1.1/")
+      # p api
+      # @@api = Instamojo::API.new do |app|
+      #   p app 
+      #   p "--------------------"
+      #   app.api_key = "e737b4ef3f19195217e591fc8ad3e057@instamojo.com"
+      #   app.auth_token = "0c12707dd9d2a2bda1a4fd7893e83a9e@instamojo.com"
+      # end
     end
 
 

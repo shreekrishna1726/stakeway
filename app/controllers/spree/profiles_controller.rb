@@ -30,9 +30,11 @@ module Spree
   end
 
   def create
-
     respond_to do |format|
       if @profile.save
+        if @profile.parent.present?
+          @profile.update_parent_referral_amount(@profile)
+        end
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else

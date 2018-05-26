@@ -1,0 +1,80 @@
+  <div id="paypal-button"></div>
+<script>
+  paypal.Button.render({
+    env: 'production',
+    client: {
+        sandbox: "#{API_CONFIG['sandbox_client']}",
+        production: "#{API_CONFIG['production_paypal_client']}"
+    },
+    commit: true,
+     payment: function(data, actions) {
+      return actions.payment.create({
+          payment: {
+              transactions: [
+                  {
+                      amount: { total: "#{@reachout.amount.to_f}", currency: 'USD' }
+                  }
+              ]
+          }
+      });
+  },
+  onAuthorize: function(data, actions) {
+    return actions.payment.execute().then(function(payment) {
+      console.log(payment);
+
+      var txnNumber = $("<input>").attr("type", "hidden").attr("name", "payment[txn_number]").val(payment['id']);
+      var paymentMethod = $("<input>").attr("type", "hidden").attr("name", "payment[payment_method]").val("Paypal");
+      $('.complete-with-paypal-form').append($(txnNumber));
+      $('.complete-with-paypal-form').append($(paymentMethod));
+      $(".complete-with-paypal-form").submit();
+    });
+  }
+}, '#paypal-button-full-payment');
+
+    paypal.Button.render({
+      env: 'sandbox', // Or 'sandbox',
+      client: {
+          sandbox: "AVgZkuPq0Qj7GzzCyDQsm7ZLcFJtGSuPGZ-UTcODg_kaTC0HnBQ0Zkm6kvQ1NZQwFYxWR2R_Bbis6VMy",
+      },
+
+      commit: true, // Show a 'Pay Now' button
+
+      style: {
+        color: 'gold',
+        size: 'small'
+      },
+
+      payment: function(data, actions) {
+        return actions.payment.create({
+            payment: {
+                transactions: [
+                    {
+                        amount: { total: "1", currency: 'INR' }
+                    }
+                ]
+            }
+        });
+      },
+
+      onAuthorize: function(data, actions) {
+        return actions.payment.execute().then(function(payment) {
+          console.log('fdssdfs', payment);
+          });
+        /* 
+         * Execute the payment here 
+         */
+      },
+
+      onCancel: function(data, actions) {
+        /* 
+         * Buyer cancelled the payment 
+         */
+      },
+
+      onError: function(err) {
+        /* 
+         * An error occurred during the transaction 
+         */
+      }
+    }, '#paypal-button');
+  </script>
