@@ -262,3 +262,56 @@ right connector from last child*/
     }
 }
 }
+
+/**************************************************************
+                          Payment Page
+****************************************************************/
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 5px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.payment-rule{
+  margin: 50px;
+  .discription {
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.03);
+    min-height: 400px;
+    li.rules {
+      list-style: none;
+      margin: 10px;
+    }
+  }
+  .payment-form {
+    padding: 50px;
+    position: absolute;
+    background: #E0EAFC;
+    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);
+    background: linear-gradient(to right, #cfdef3, #e0eafc);
+    right: 340px;
+    top: 437px;
+    min-height: 200px;
+    box-shadow: 4px 6px 5px 0px rgba(0, 0, 0, 0.2);
+    article {
+      display: none;
+    }
+    .amount{
+      text-align: center;
+      .price{
+        font-size: 36px;
+        text-shadow: 1px 3px #b5bdc4;
+        font-weight: bolder;
+        color: #0084bf;
+      }
+    }
+    .payment-form-btn {
+      position: absolute;
+      bottom: 0px;
+      right: 17px;
+    }
+  }
+}

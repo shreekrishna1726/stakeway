@@ -1,46 +1,92 @@
-  <div id="paypal-button"></div>
-<script>
-  paypal.Button.render({
-    env: 'production',
-    client: {
-        sandbox: "#{API_CONFIG['sandbox_client']}",
-        production: "#{API_CONFIG['production_paypal_client']}"
-    },
-    commit: true,
-     payment: function(data, actions) {
-      return actions.payment.create({
-          payment: {
-              transactions: [
-                  {
-                      amount: { total: "#{@reachout.amount.to_f}", currency: 'USD' }
-                  }
-              ]
-          }
-      });
-  },
-  onAuthorize: function(data, actions) {
-    return actions.payment.execute().then(function(payment) {
-      console.log(payment);
+<div id="team" class="text-center">
+<div class="container">
+  <div class="payment-rule">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="discription">
+          <h2 class="heading">What are the online payment rules?</h2>
+          <div class="">When you are required to enter your billing information and credit card details during the payment process, you will see the link to the right of the screen called ‘See online payment rules’.</div>
+          <div class="col-md-8">
+            <li class="rules"><i class="fa fa-check" aria-hidden="true"></i></li>
+            <li class="rules"><i class="fa fa-check" aria-hidden="true"></i></li>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 payment-form">
+        <%= form_for @charge do |f| %>
+          Amount    : <%= f.text_field :amount, id:'payment-amount', disabled:true %><br />
+          Token     : <%= f.text_field :txn_number , id:'txn_number', disabled:true%><br />
+          
+        <% end %>
+        <!-- <div class="amount">
+          <div class=""> Subscription Amount</div>
+          <div class="price">150</div>
+        </div> -->
+        <div class="payment-form-btn">
+          <div id="paypal-button"></div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div>
+    
+  </div>
+</div>
+</div>
 
-      var txnNumber = $("<input>").attr("type", "hidden").attr("name", "payment[txn_number]").val(payment['id']);
-      var paymentMethod = $("<input>").attr("type", "hidden").attr("name", "payment[payment_method]").val("Paypal");
-      $('.complete-with-paypal-form').append($(txnNumber));
-      $('.complete-with-paypal-form').append($(paymentMethod));
-      $(".complete-with-paypal-form").submit();
-    });
-  }
-}, '#paypal-button-full-payment');
+
+
+
+
+
+<script>
+  $('#payment-amount').val(150);
+//   paypal.Button.render({
+//     env: 'production',
+//     client: {
+//         sandbox: "#{API_CONFIG['sandbox_client']}",
+//         production: "#{API_CONFIG['production_paypal_client']}"
+//     },
+//     commit: true,
+//      payment: function(data, actions) {
+//       return actions.payment.create({
+//           payment: {
+//               transactions: [
+//                   {
+//                       amount: { total: "#{@reachout.amount.to_f}", currency: 'USD' }
+//                   }
+//               ]
+//           }
+//       });
+//   },
+//   onAuthorize: function(data, actions) {
+//     return actions.payment.execute().then(function(payment) {
+//       console.log(payment);
+
+//       document.body.innerHTML += '<form id="paymentForm" action="/charges" method="post"><input type="hidden" name="amount" value="1"><input type="hidden" name="amount" value="'+payment['id']+'"></form>';
+//       document.getElementById("paymentForm").submit();
+
+//       // var txnNumber = $("<input>").attr("type", "hidden").attr("name", "payment[txn_number]").val(payment['id']);
+//       // var paymentMethod = $("<input>").attr("type", "hidden").attr("name", "payment[payment_method]").val("Paypal");
+//       // $('.complete-with-paypal-form').append($(txnNumber));
+//       // $('.complete-with-paypal-form').append($(paymentMethod));
+//       // $(".complete-with-paypal-form").submit();
+//     });
+//   }
+// }, '#paypal-button-full-payment');
 
     paypal.Button.render({
-      env: 'sandbox', // Or 'sandbox',
+      env: 'production', // Or 'sandbox',
       client: {
           sandbox: "AVgZkuPq0Qj7GzzCyDQsm7ZLcFJtGSuPGZ-UTcODg_kaTC0HnBQ0Zkm6kvQ1NZQwFYxWR2R_Bbis6VMy",
+          production: "Aaewj1H855mxvvxqwD_0bHGGbPcLV4QfjRKCPgdameV929-Z7atuFTOv7bI1TeXx3OOszhFbApXBaDEx"
       },
 
       commit: true, // Show a 'Pay Now' button
 
       style: {
-        color: 'gold',
+        color: 'blue',
         size: 'small'
       },
 
@@ -58,23 +104,20 @@
 
       onAuthorize: function(data, actions) {
         return actions.payment.execute().then(function(payment) {
-          console.log('fdssdfs', payment);
+          $('#payment-amount').val(150);
+          $('#txn_number').val(14932423423);
+          document.getElementById("new_charge").submit();
           });
-        /* 
-         * Execute the payment here 
-         */
       },
 
       onCancel: function(data, actions) {
-        /* 
-         * Buyer cancelled the payment 
-         */
+        // $('#payment-amount').val(150);
+        // $('#txn_number').val(14932423423);
+        // document.getElementById("new_charge").submit();
       },
 
       onError: function(err) {
-        /* 
-         * An error occurred during the transaction 
-         */
+        console.log(err)
       }
     }, '#paypal-button');
   </script>

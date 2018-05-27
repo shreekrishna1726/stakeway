@@ -8,20 +8,20 @@
         ul
           - @profile.errors.full_messages.each do |message|
             li = message
-    .wrap-input100.validate-input data-validate=("Valid email is required: ex@abc.xyz") 
+    .wrap-input100.validate-input 
       = f.text_field :first_name, class: 'form-control input100', tabindex: 1, placeholder: Spree.t(:first_name)
       span.focus-input100
       span.symbol-input100
-        i.fa.fa-envelope aria-hidden="true" 
-    .wrap-input100.validate-input data-validate=("Valid email is required: ex@abc.xyz") 
+        
+    .wrap-input100.validate-input 
       = f.text_field :last_name, class: 'form-control input100', tabindex: 1, placeholder: Spree.t(:last_name)
       span.focus-input100
       span.symbol-input100
-        i.fa.fa-envelope aria-hidden="true"
-    .wrap-input100.validate-input data-validate=("Valid email is required: ex@abc.xyz") 
+        
+    .wrap-input100.validate-input 
       = f.text_field :referral_id, class: 'form-control input100', tabindex: 1, placeholder: "Referral Id"
       span.focus-input100
       span.symbol-input100
-        i.fa.fa-envelope aria-hidden="true"
+        
     .container-login100-form-btn
        = f.submit "Save",  class:'login100-form-btn'
