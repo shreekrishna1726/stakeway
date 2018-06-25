@@ -1,0 +1,64 @@
+common: &default_settings
+  :access_key_id: "AKIAI4FB34M3J3FFPNQA"
+  :secret_access_key: "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"
+  :bucket: "commonstake"
+  :s3_host_name: ""s3-us-west-2.amazonaws.com""
+  :s3_region: "us-west-2"
+production: &production
+
+  :images:
+    :attachment:
+      :storage: !ruby/symbol s3
+      :s3_protocol: <%= Rails.env == "production" ? :https : :http %>
+      :s3_credentials:
+        <<: *default_settings
+      :styles:
+        :mini: '48x48>'
+        :small: '100x100>'
+        :product: '444x444>'
+        :large: '600x600>'
+      :url: '/spree/products/:id/:style/:basename.:extension'
+      :path: '/spree/products/:id/:style/:basename.:extension'
+      :default_style: :product
+      :default_url: '/assets/missing.png'
+      :convert_options:
+        :all: '-strip -auto-orient -colorspace sRGB'
+  :taxons:
+    :icon:
+      :storage: !ruby/symbol s3
+      :s3_protocol: :https
+      :s3_credentials:
+        <<: *default_settings
+      :s3_permissions:
+        :product: :public_read
+      :default_url: '/assets/default_taxon.png'
+      :styles:
+        :mini: '32x32>'
+        :normal: '128x128>'
+      :url: '/spree/taxons/:id/:style/:basename.:extension'
+      :path: '/spree/taxons/:id/:style/:basename.:extension'
+      :default_url: '/spree/taxons/:id/:style/:basename.:extension'
+      :default_style: 'mini'
+  :stores:
+    :logo:
+      :storage: !ruby/symbol s3
+      :s3_protocol: <%= Rails.env == 'production' ? :https : :http %>
+      :s3_credentials:
+        <<: *default_settings
+      :styles:
+        :mini: '48x48>'
+        :small: '100x100>'
+        :large: '240x240>'
+        :logo: '167x137#'
+      :url: '/stores/:id/:style/:basename.:extension'
+      :path: '/stores/:id/:style/:basename.:extension'
+      :default_style: :logo
+      :default_url: '/images/pyc-logo.png'
+      :convert_options:
+        :all: '-strip -auto-orient -colorspace sRGB'
+ 
+
+
+development: 
+  <<: *production
+

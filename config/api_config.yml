@@ -1,0 +1,41 @@
+development:
+  amazon_bucket_name: stakehouse-staging
+  amazon_access_key: AKIAI4FB34M3J3FFPNQA
+  amazon_access_secret: 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
+  s3_host_name: "s3-us-west-2.amazonaws.com"
+  facebook_id: "1396408910687108"
+  facebook_secret: "38bd8b7affb248bc312a069a9bf9a023"
+  google_id: "1069537115388-q4m3fijc110pgeg0hhtouddnvup9hpoq.apps.googleusercontent.com"
+  google_secret: "5yT7cgbFA9NJNJepuqRkfUS_"
+  linkedin_id: "75h2e7abhtqmhf"
+  linkedin_secret: "Kjij1UFwCWXXcwBo"
+
+staging:
+  amazon_bucket_name: stakehouse-staging
+  amazon_access_key: AKIAI4FB34M3J3FFPNQA
+  amazon_access_secret: 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
+  s3_host_name: "s3-us-west-2.amazonaws.com"
+  facebook_id: "1396408910687108"
+  facebook_secret: "38bd8b7affb248bc312a069a9bf9a023"
+  linkedin_id: "75h2e7abhtqmhf"
+  linkedin_secret: "Kjij1UFwCWXXcwBo"
+  google_id: "1012475345111-l5qj0da5eo4hmp7jn4tri35nmubp5mlr.apps.googleusercontent.com"
+  google_secret: "mfUBneZ4gNpP2rN4IhlfecYj"
+
+commonstake:
+  amazon_bucket_name: commonstake
+  amazon_access_key: AKIAI4FB34M3J3FFPNQA
+  amazon_access_secret: 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
+  s3_host_name: "s3-us-west-2.amazonaws.com"
+  facebook_id: "1396408910687108"
+  facebook_secret: "38bd8b7affb248bc312a069a9bf9a023"
+  linkedin_id: "75h2e7abhtqmhf"
+  linkedin_secret: "Kjij1UFwCWXXcwBo"
+  google_id: "1012475345111-l5qj0da5eo4hmp7jn4tri35nmubp5mlr.apps.googleusercontent.com"
+  google_secret: "mfUBneZ4gNpP2rN4IhlfecYj"
+
+production:
+  amazon_bucket_name: stakehouse-production
+  amazon_access_key: AKIAI4FB34M3J3FFPNQA
+  amazon_access_secret: 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
+  s3_host_name: "s3-us-west-2.amazonaws.com"
