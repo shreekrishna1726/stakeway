@@ -1,7 +1,7 @@
 module Spree
   class ChargesController < Spree::BaseController
-    before_action :authenticate_user!
-    before_action :set_api
+    # before_action :authenticate_user!
+    # before_action :set_api
 
     # require 'Instamojo-rb'
     # require 'paypal-sdk-rest'
@@ -15,11 +15,17 @@ module Spree
     # @@api = Instamojo::API.new("test_7a8227fcbc492750c81b5c7be5a", "test_0e624f8d7a4b979484533e38ded", "https://test.instamojo.com/api/1.1/")
     # @@api = Instamojo::API.new("test_7a8227fcbc492750c81b5c7be5a", "test_0e624f8d7a4b979484533e38ded", "https://test.instamojo.com/api/1.1/")
     def new
-      if current_spree_user.active
-        redirect_to '/profiles/new'
+      @charge = Charge.where(profile_id: current_spree_user.id).first 
+      if @charge.present?
+        redirect_to '/account'
       else
-        @charge = Charge.new
+      @charge = Charge.new
       end
+      # if current_spree_user.active
+      #   redirect_to '/profiles/new'
+      # else
+      #   @charge = Charge.new
+      # end
       # @payment = Payment.new({
       #   :intent =>  "sale",
       #   :payer =>  {
@@ -43,7 +49,9 @@ module Spree
     end
 
 
-    def paymentDetail
+    def payu_callback
+      notification = PayuIndia::Notification.new(request.query_string, options = {:key => 'hVo3I9mQ', :salt => 'd1zxVXdrOu', :params => params})
+      P notification
         # payment = Payment.find(params[:paymentId])
         # if payment.execute( :payer_id => params[:PayerID] )
         #   current_spree_user.update_attributes(active: true)
@@ -73,9 +81,10 @@ module Spree
     def create
       @charge =  Charge.create(charge_param.merge(profile_id: current_spree_user.id))
       if @charge.save
-        redirect_to '/profiles/new', notice: 'Thank you:)'
+        RestClient.get "http://api.msg91.com/api/sendhttp.php?sender=STKWAY&route=4&mobiles=+91 #{@charge.phone}&authkey=216365AN4qYNqoraNX5b02596d&country=91&message=Dear #{@charge.name}, Thank you for connecting us. Your premium account will be active next 24hr."
+        redirect_to '/account', notice: 'Your details has been send to our channel. Once your verification will be completed, your premium account will active. Thanks:) '
       else
-        redirect_to '/charges/new', notice: 'Something went wrong(:'
+        render 'new', notice: @charge.errors.full_message.join('')
       end
     end
 
@@ -95,7 +104,7 @@ module Spree
 
 
     def charge_param
-      params.require(:charge).permit(:amount, :txn_number)
+      params.require(:charge).permit(:amount, :txn_number, :name, :referralId, :phone, :payment_method)
     end
 
 

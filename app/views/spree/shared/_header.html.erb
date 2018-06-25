@@ -1,15 +1,37 @@
 <div id="spree-header">
   <header id="header" data-hook>
-    <div class="container">
+    <div class="container-fluid top-header">
       <div class="row">
-        <figure id="logo" class="col-md-4 col-sm-3" data-hook>
-          <%= logo %>
-        </figure>
-        <%= render partial: 'spree/shared/nav_bar' %>
+        <div class="container">
+          <div class="col-md-9 col-sm-8 col-xs-12 hidden-xs">
+            <span class="contact-mail"><i class="fa fa-envelope"></i> info@stakeway.com</span>
+            <span class="contact-phn"><i class="fa fa-phone"></i> (+91) 9971907800</span>
+            <span class="contact-phn"><i class="fa fa-rupee"></i>Referral-Code: <%= uuid_without_child.try(:uuid)%></span>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-12 right-top-head text-right pull-right">
+
+            <div class="dropdown">
+              <a href="#" class="dropdown-toggle my-account-text"  data-toggle="dropdown"><i class="fa fa-user"></i> My Account <i class="fa fa-angle-down"></i></a>
+              <ul class="dropdown-menu">
+                <%= render partial: 'spree/shared/login_bar' %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid logo-header">
+      <div class="row">
+        <div class="container" style="display: flex;align-items: center;">
+          <figure id="logo" class="col-md-3 col-sm-3" data-hook>
+            <%= link_to image_tag('logo.png'), root_path %>
+          </figure>
+          <%= render partial: 'spree/shared/nav_bar' %>
+        </div>
       </div>
     </div>
   </header>
-  <div class="container">
-    <%= render partial: 'spree/shared/main_nav_bar' %>
+  <div class="container-fluid navbar-inverse">
+    
   </div>
 </div>

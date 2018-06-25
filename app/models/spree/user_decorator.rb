@@ -3,7 +3,7 @@ module Spree
 
 		has_one :profile
 
-		# validates :phone_number, presence: :true, uniqueness: :true
+		validates :phone, presence: :true, uniqueness: :true
 
 		attr_accessor :email_confirmation, :login_with_phone
 

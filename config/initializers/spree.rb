@@ -16,3 +16,4 @@ Spree.config do |config|
 end
 
 Spree.user_class = "Spree::User"
+Spree::PermittedAttributes.user_attributes.push :active, :phone

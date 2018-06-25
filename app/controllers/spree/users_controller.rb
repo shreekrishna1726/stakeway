@@ -4,6 +4,10 @@ module Spree
 
 
 
+    def show
+    	@user = current_spree_user
+    end
+
     def my_orders
       @my_orders = spree_current_user.orders
     end

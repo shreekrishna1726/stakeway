@@ -1,123 +1,37 @@
-<div id="team" class="text-center">
-<div class="container">
-  <div class="payment-rule">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="discription">
-          <h2 class="heading">What are the online payment rules?</h2>
-          <div class="">When you are required to enter your billing information and credit card details during the payment process, you will see the link to the right of the screen called ‘See online payment rules’.</div>
-          <div class="col-md-8">
-            <li class="rules"><i class="fa fa-check" aria-hidden="true"></i></li>
-            <li class="rules"><i class="fa fa-check" aria-hidden="true"></i></li>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 payment-form">
-        <%= form_for @charge do |f| %>
-          Amount    : <%= f.text_field :amount, id:'payment-amount', disabled:true %><br />
-          Token     : <%= f.text_field :txn_number , id:'txn_number', disabled:true%><br />
-          
-        <% end %>
-        <!-- <div class="amount">
-          <div class=""> Subscription Amount</div>
-          <div class="price">150</div>
-        </div> -->
-        <div class="payment-form-btn">
-          <div id="paypal-button"></div>
-        </div>
-        
-      </div>
+<div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading form-heading">
+      <h3 class="panel-title"><%= Spree.t(:premium_registration) %></h3>
+    </div>
+    <div class="panel-body">
+      <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @charge } %>
+      
+      <%= render :partial => 'form'%>
     </div>
   </div>
-  <div>
-    
+</div>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Payment Info </h4>
+      </div>
+      <div class="modal-body">
+        <h4>Just Do the Payment Only Rs. 150/- by Paytm/Bank transaction</h4>
+        <h5>Check out our transaction medium</h5>
+        <div class="payment-method">
+          <%=image_tag 'paytm.png', style:"    width: 100%;"%>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>
-</div>
-
-
-
-
-
-
-<script>
-  $('#payment-amount').val(150);
-//   paypal.Button.render({
-//     env: 'production',
-//     client: {
-//         sandbox: "#{API_CONFIG['sandbox_client']}",
-//         production: "#{API_CONFIG['production_paypal_client']}"
-//     },
-//     commit: true,
-//      payment: function(data, actions) {
-//       return actions.payment.create({
-//           payment: {
-//               transactions: [
-//                   {
-//                       amount: { total: "#{@reachout.amount.to_f}", currency: 'USD' }
-//                   }
-//               ]
-//           }
-//       });
-//   },
-//   onAuthorize: function(data, actions) {
-//     return actions.payment.execute().then(function(payment) {
-//       console.log(payment);
-
-//       document.body.innerHTML += '<form id="paymentForm" action="/charges" method="post"><input type="hidden" name="amount" value="1"><input type="hidden" name="amount" value="'+payment['id']+'"></form>';
-//       document.getElementById("paymentForm").submit();
-
-//       // var txnNumber = $("<input>").attr("type", "hidden").attr("name", "payment[txn_number]").val(payment['id']);
-//       // var paymentMethod = $("<input>").attr("type", "hidden").attr("name", "payment[payment_method]").val("Paypal");
-//       // $('.complete-with-paypal-form').append($(txnNumber));
-//       // $('.complete-with-paypal-form').append($(paymentMethod));
-//       // $(".complete-with-paypal-form").submit();
-//     });
-//   }
-// }, '#paypal-button-full-payment');
-
-    paypal.Button.render({
-      env: 'production', // Or 'sandbox',
-      client: {
-          sandbox: "AVgZkuPq0Qj7GzzCyDQsm7ZLcFJtGSuPGZ-UTcODg_kaTC0HnBQ0Zkm6kvQ1NZQwFYxWR2R_Bbis6VMy",
-          production: "Aaewj1H855mxvvxqwD_0bHGGbPcLV4QfjRKCPgdameV929-Z7atuFTOv7bI1TeXx3OOszhFbApXBaDEx"
-      },
-
-      commit: true, // Show a 'Pay Now' button
-
-      style: {
-        color: 'blue',
-        size: 'small'
-      },
-
-      payment: function(data, actions) {
-        return actions.payment.create({
-            payment: {
-                transactions: [
-                    {
-                        amount: { total: "1", currency: 'INR' }
-                    }
-                ]
-            }
-        });
-      },
-
-      onAuthorize: function(data, actions) {
-        return actions.payment.execute().then(function(payment) {
-          $('#payment-amount').val(150);
-          $('#txn_number').val(14932423423);
-          document.getElementById("new_charge").submit();
-          });
-      },
-
-      onCancel: function(data, actions) {
-        // $('#payment-amount').val(150);
-        // $('#txn_number').val(14932423423);
-        // document.getElementById("new_charge").submit();
-      },
-
-      onError: function(err) {
-        console.log(err)
-      }
-    }, '#paypal-button');
-  </script>

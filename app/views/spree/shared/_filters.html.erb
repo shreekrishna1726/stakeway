@@ -7,7 +7,7 @@
       <% labels = filter[:labels] || filter[:conds].map {|m,c| [m,m]} %>
       <% next if labels.empty? %>
       <div class="navigation" data-hook="navigation">
-        <h4 class="filter-title"> <%= filter[:name] %> </h4>
+        <h3 class="filter-title"> <%= filter[:name] %> </h3>
         <ul class="list-group">
           <% labels.each do |nm,val| %>
             <% label = "#{filter[:name]}_#{nm}".gsub(/\s+/,'_') %>
@@ -23,6 +23,6 @@
         </ul>
       </div>
     <% end %>
-    <%= submit_tag Spree.t(:search), name: nil, class: 'btn btn-primary' %>
+    <%= submit_tag Spree.t(:search), name: nil, class: 'btn btn-black' %>
   <% end %>
 <% end %>

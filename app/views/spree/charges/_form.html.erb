@@ -1,0 +1,28 @@
+<%= form_for @charge do |f| %>
+    <fieldset id="password-credentials">
+		  <div class="form-group">
+		    <%= f.text_field :name, :class => 'form-control', :placeholder => Spree.t(:name) %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.text_field :phone, :class => 'form-control', :placeholder => Spree.t(:phone) %>
+		  </div> 
+		  <div class="form-group center-content">
+		    <%= f.text_field :txn_number, :class => 'form-control', :placeholder => "transaction number", style:"width:90%;" %>
+		    <a role="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"><i class="fa fa-info"></i></a>
+		    
+		  </div>
+		  <div class="form-group">
+		    <%= f.text_field :payment_method, :class => 'form-control', :placeholder => "Enter Payment Method(Paytm Or Bank)" %>
+		  </div>
+		  <hr/>
+		  <div class="form-group">
+		    <%= f.text_field :amount, :class => 'form-control', :placeholder => "150", value: 150, disabled:true %>
+		  </div>  
+		</fieldset>
+		<div data-hook="signup_below_password_fields"></div>
+
+    <p>
+      <%= f.submit Spree.t(:update), :class => 'btn btn-success btn-login' %>
+    </p>
+<% end %>
+

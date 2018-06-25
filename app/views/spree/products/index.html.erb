@@ -1,59 +1,27 @@
+<% if "spree/products" == params[:controller] && @taxon || @taxonomies.present? %>
+  <% content_for :sidebar do %>
+    <div data-hook="homepage_sidebar_navigation">
+      <% if "spree/products" == params[:controller] && @taxon %>
+        <%= render partial: 'spree/shared/filters' %>
+      <% else %>
+        <%= render partial: 'spree/shared/taxonomies' %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
 
-
-<div class="listingtabs-box2">
-                                        <div id="listingtabs_4" class="sm-listing-tabs block">
-                                            <div class="block-title"><strong>New Items</strong></div>
-                                            <div class="ltabs-wrap">
-                                               
-                                                <div class="ltabs-items-container ">
-                                                    <div class="ltabs-items  ltabs-items-selected ltabs-items-loaded  ltabs-items-97">
-                                                        <div class="ltabs-items-inner">
-                                                            <div class="products wrapper grid products-grid">
-                                                                <ol class="products list items product-items  play" data-liffect="fadeIn">
-                                                                    <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
-                                                                </ol>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ltabs-loadmore" data-tab-id="97" data-catids="97,185,186,187,188,212,213,214,215" data-rl_start="8" data-rl_total="13" data-rl_allready="All ready" data-rl_load="8">
-                                                            <div class="ltabs-loadmore-btn " data-label=" Load more"><span class="ltabs-image-loading"></span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ltabs-items  ltabs-items-98">
-                                                        <div class="ltabs-items-inner">
-                                                            <div class="ltabs-loading"></div>
-                                                        </div>
-                                                        <div class="ltabs-loadmore" data-tab-id="98" data-catids="98,164,167,168,169,170,171,165,172,173,174,175,176,166,177,180,181,182,183,226,184,216,223,224,225,227,178,179,220,221,222,228,217,218,219,229,230" data-rl_start="8" data-rl_total="11" data-rl_allready="All ready" data-rl_load="8">
-                                                            <div class="ltabs-loadmore-btn " data-label=" Load more"><span class="ltabs-image-loading"></span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ltabs-items  ltabs-items-99">
-                                                        <div class="ltabs-items-inner">
-                                                            <div class="ltabs-loading"></div>
-                                                        </div>
-                                                        <div class="ltabs-loadmore" data-tab-id="99" data-catids="99,189,190,191,192" data-rl_start="8" data-rl_total="5" data-rl_allready="All ready" data-rl_load="8">
-                                                            <div class="ltabs-loadmore-btn loaded" data-label=" All ready"><span class="ltabs-image-loading"></span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ltabs-items  ltabs-items-100">
-                                                        <div class="ltabs-items-inner">
-                                                            <div class="ltabs-loading"></div>
-                                                        </div>
-                                                        <div class="ltabs-loadmore" data-tab-id="100" data-catids="100,201,202,203,204" data-rl_start="8" data-rl_total="7" data-rl_allready="All ready" data-rl_load="8">
-                                                            <div class="ltabs-loadmore-btn loaded" data-label=" All ready"><span class="ltabs-image-loading"></span></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ltabs-items  ltabs-items-103">
-                                                        <div class="ltabs-items-inner">
-                                                            <div class="ltabs-loading"></div>
-                                                        </div>
-                                                        <div class="ltabs-loadmore" data-tab-id="103" data-catids="103,197,198,199,200" data-rl_start="8" data-rl_total="2" data-rl_allready="All ready" data-rl_load="8">
-                                                            <div class="ltabs-loadmore-btn loaded" data-label=" All ready"><span class="ltabs-image-loading"></span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--End Items-->
-                                            </div>
-                                        </div>
-                                    </div>
-
-
+<% if params[:keywords] %>
+  <div data-hook="search_results">
+    <% if @products.empty? %>
+      <h6 class="search-results-title"><%= Spree.t(:no_products_found) %></h6>
+    <% else %>
+      <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+    <% end %>
+  </div>
+<% else %>
+  <div data-hook="homepage_products">
+    <% cache(cache_key_for_products) do %>
+      <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+    <% end %>
+  </div>
+<% end %>

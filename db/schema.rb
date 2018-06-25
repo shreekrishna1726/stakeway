@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180223160357) do
+ActiveRecord::Schema.define(version: 20180624125110) do
 
   create_table "charges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "profile_id"
@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(version: 20180223160357) do
     t.string "txn_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "phone"
+    t.string "referralId"
+    t.string "payment_method"
   end
 
   create_table "contact_us", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -1043,6 +1047,7 @@ ActiveRecord::Schema.define(version: 20180223160357) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.boolean "active", default: false
+    t.string "phone"
     t.index ["bill_address_id"], name: "index_spree_users_on_bill_address_id"
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at"
     t.index ["email"], name: "email_idx_unique", unique: true

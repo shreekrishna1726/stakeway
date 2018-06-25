@@ -1,14 +1,7 @@
-<div id="team" class="text-center">
-  <div class="container">
-
 <% @body_id = 'checkout-page' %>
 <% content_for :google_analytics do %>
   <%= render partial: 'spree/shared/google_checkout.js', locals: { order: @order, step_number: (@order.checkout_steps.index(@order.state) + 1) } %>
 <% end %>
-
-<%= render partial: 'spree/shared/trackers/segment/checkout_step_viewed.js',
-            formats: :js,
-            locals: { order: @order } %>
 
 <div id="checkout" data-hook>
   <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
@@ -17,7 +10,7 @@
     <div class="col-sm-3">
       <h1 data-hook="checkout_title"><%= Spree.t(:checkout) %></h1>
     </div>
-    <div class="col-sm-9" data-hook="checkout_progress">
+    <div class="col-sm-12" data-hook="checkout_progress">
       <%= checkout_progress %>
     </div>
   </div>
@@ -30,7 +23,7 @@
             <div class="panel-body">
               <div class="form-group">
                 <%= form.label :email %>
-                <%= form.email_field :email, class: 'form-control', required: true %>
+                <%= form.text_field :email, class: 'form-control' %>
               </div>
             </div>
           </div>
@@ -47,10 +40,11 @@
   </div>
 </div>
 
-</div>
-</div>
-
 <script>
   Spree.current_order_id = "<%= @order.number %>"
   Spree.current_order_token = "<%= @order.guest_token %>"
 </script>
+
+<% if I18n.locale != :en %>
+  <%= javascript_include_tag 'jquery.validate/localization/messages_' + I18n.locale.to_s.downcase.gsub('-', '') %>
+<% end %>

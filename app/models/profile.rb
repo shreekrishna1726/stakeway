@@ -8,7 +8,7 @@ class Profile < ApplicationRecord
 	after_create :generate_uuid
 	after_create :update_tree_set
 
-	belongs_to :parent, class_name: "Profile", foreign_key: :parent_id
+	# belongs_to :parent, class_name: "Profile", foreign_key: :parent_id
 	has_many :children, class_name: "Profile", foreign_key: :parent_id
 	validates_presence_of :referral_id
 	validates_uniqueness_of :uuid

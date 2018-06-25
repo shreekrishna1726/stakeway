@@ -13,12 +13,16 @@ module Spree
   
 
 
-  def new
+  def index
     if spree_current_user.profile.present?
       redirect_to profile_path(current_spree_user.profile)
     else
-      @profile = Profile.new
+      redirect_to new_profile_path
     end
+  end
+
+  def new
+      @profile = Profile.new
   end
 
 

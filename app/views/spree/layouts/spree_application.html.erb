@@ -5,26 +5,30 @@
 <!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
 <!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
   <head data-hook="inside_head">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="http://magento2.flytheme.net/themes/sm_emarket/pub/static/_cache/merged/b801a42d1a5775d69459ef32b8b9cc79.min.css">
-    <link rel="stylesheet" type="text/css" href="http://magento2.flytheme.net/themes/sm_emarket/pub/static/frontend/Sm/emarket/en_US/css/styles-l.min.css">
-    <link rel="stylesheet" type="text/css" href="http://magento2.flytheme.net/themes/sm_emarket/pub/static/frontend/Sm/emarket/en_US/css/print.min.css">
-    <link rel="stylesheet" type="text/css" href="http://magento2.flytheme.net/themes/sm_emarket/pub/static/_cache/merged/486257c739bf515fb7c224e43c7a6fa5.min.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,200.300,400,500,,600,700">
-    <link rel="stylesheet" type="text/css" href="http://magento2.flytheme.net/themes/sm_emarket/pub/static/frontend/Sm/emarket/en_US/css/config_3.css">
     <%= render partial: 'spree/shared/head' %>
-    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-    <script src="https://js.braintreegateway.com/web/3.25.0/js/client.min.js"></script>
-    <script src="https://js.braintreegateway.com/web/3.25.0/js/paypal-checkout.min.js"></script>
+    <%= stylesheet_link_tag 'default.manifest.css' %>
+    <% javascript_include_tag 'https://code.jquery.com/jquery-1.10.2.js' %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
+    <%= javascript_include_tag 'default.manifest.js'%>
   </head>
-  <body  data-hook="body"  data-spy="scroll" data-target=".navbar-fixed-top" id="category" class="header-1-style home-1-style layout-boxed cms-home-demo-01 cms-index-index page-layout-1column">
-    <div class="page-wrapper">
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
     <%= render partial: 'spree/shared/google_analytics.js' %>
-    <%= render partial: 'spree/shared/trackers/segment/initializer.js' %>
-    <%= render partial: 'spree/shared/new_header' %>
-      <%= yield %>
-    <%= render partial: 'spree/shared/footer' %>
+    <%= render partial: 'spree/shared/header' %>
+
+    <div class="container">
+      <div class="row" data-hook>
+        <%= breadcrumbs(@taxon) %>
+
+        <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
+
+        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+          <%= flash_messages %>
+          <%= yield %>
+        </div>
+
+        <%= yield :templates %>
+      </div>
     </div>
-    
+    <%= render partial: 'spree/shared/footer' %>
   </body>
 </html>
